@@ -1,0 +1,94 @@
+
+## TechOps Data Documentation Template – campi spiegati
+
+### 1. Dataset Overview
+
+* **Dataset Description (II)** → un riassunto testuale di cosa contiene il dataset e a cosa serve.
+* **Version and status (II, V)** → numero di versione, stato (“in uso”, “deprecated”, ecc.).
+* **Relevant links (V)** → link a repository, paper, datasheet.
+* **Developers (V)** → chi ha sviluppato o curato il dataset.
+* **Owners (V)** → chi è responsabile del dataset.
+* **Instructions and user interface description (VIII, IX)** → come si accede, come si usa, eventuale interfaccia (es. API, portale).
+
+### 2. Data Versioning
+
+* Come viene gestita la versione del dataset (DVC, Git LFS, HuggingFace hub, ecc.).
+
+### 3. Known Usages
+
+* **Model(s)** → modelli che usano questo dataset.
+* **Application(s)** → applicazioni finali che lo sfruttano.
+  👉 Nell’esempio ALiSNet: i dataset sono citati dentro le sezioni *Training* ed *Evaluation*.
+
+### 4. Dataset Characteristics
+
+* **Data types** → tabellare, immagine, audio, testo.
+* **Size** → numero record, file, bytes.
+* **Primary Use Case(s)** → per quali scopi principali è stato raccolto (classificazione immagini, traduzione, ecc.).
+
+### 5. Data Origins and Source
+
+* Da dove viene il dataset (raccolta interna, scraping, open dataset, partner esterni).
+
+### 6. Provenance
+
+* **Collection method(s)** → come sono stati raccolti i dati (sensori, annotazioni manuali, crowd-sourcing).
+* **Source description** → descrizione più dettagliata della fonte.
+
+### 7. Data Pre-processing
+
+* **Data Cleaning** → rimozione duplicati, normalizzazioni.
+* **Data Transformation** → conversioni di formato, tokenizzazione.
+* **Feature Engineering** → variabili derivate.
+* **Data Augmentation** → tecniche per ampliare dataset (flip immagini, oversampling, ecc.).
+
+### 8. Data Annotation
+
+* Come sono stati annotati i dati, da chi, con quali linee guida.
+
+### 9. Dataset Distribution
+
+* Come viene distribuito (API, file zip, HuggingFace dataset, DVC remote).
+* Licenza e termini di utilizzo.
+
+### 10. Access, Retention and Deletion
+
+* Chi può accedere, per quanto tempo vengono conservati i dati, politiche di cancellazione.
+
+### 11. Data Risk Assessment
+
+* Rischi legati al dataset (bias, PII, dati sensibili).
+
+### 12. Cybersecurity Measures
+
+* Misure di protezione: crittografia, accesso controllato, logging, auditing.
+
+### 13. Documentation Metadata
+
+* Chi ha scritto la documentazione, quando, versione del documento stesso.
+  👉 Nell’esempio ALiSNet: c’è *Documentation Template Version* e *Documentation Authors*.
+
+### 14. Standards Applied
+
+* Standard tecnici o normativi rispettati (ISO, IEEE, FAIR data principles).
+
+### 15. Data Monitoring
+
+* Come viene monitorato l’uso e la qualità del dataset nel tempo (drift detection, alert).
+
+### 16. EU Declaration of Conformity
+
+* Dichiarazione di conformità ai requisiti regolatori (es. AI Act).
+
+---
+
+📌 Nell’esempio ALiSNet che hai allegato, si vedono le stesse logiche applicate al modello: descrizione, versioning, intended use, datasets, evaluation, bias, caveats, metadata.
+Il template “Data” chiede le stesse cose ma spostate sul dataset invece che sul modello.
+
+---
+
+Vuoi che ti costruisca una **tabella comparativa** che mette affiancato:
+
+* campo del *TechOps Data Template*
+* a cosa serve
+* un esempio di contenuto concreto (magari ispirato a quello che hai allegato sul modello)?
