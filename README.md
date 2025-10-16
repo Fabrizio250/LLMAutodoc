@@ -1,20 +1,25 @@
 # Documentation Graph (Dataset Focus)
 
 Questo progetto dimostra come costruire un grafo con **LangGraph** per generare documentazione tecnica a partire da un repository AI/ML.  
-Al momento il focus è sulla sezione **Dataset Documentation**, ma l’architettura è pensata per estendersi facilmente anche a **Model** e **Application Documentation**.
+Al momento il focus è sul documento **Dataset Documentation**, ma l’architettura è pensata per estendersi facilmente per integrare nuovi documenti regolatori, come **Model Documentation** e **Application Documentation**.
+Attualmente il lavoro può essere lanciato in qualsiasi momento, eseguendo il main e passando il link del repository di cui si vuole creare la documentazione, ma in futuro potrebbe essere lanciato, tramite un workflow, tramite un evento attivante (es. pull request).
 
 ---
 
 ## 🗺️ schema del grafo
-![Esecuzione del grafo](./images/graphStructure.png)
+![Esecuzione del grafo](./images/graphStructure1.png)
 
-Flusso: setup → llm_orchestrator → (tools?|compile) → toolsNode ↔ llm_orchestrator … → compilerNode → END
+setup node: inizializza e istanzia alcune variabili necessarie per il flow designato( es. state[config],state[dataset]....)
 
 llm_orchestrator: orchestration LLM + tool use
 
-toolsNode: esegue i tool (in questo setup: ask_user_input, clone_repo)
+toolsNode: esegue i tool definiti ed associati al nodo ( es. @tool clone_repo)
 
-compilerNode: finalizer che compila i metadati in output strutturato e li salva nello state
+harvesterNode: colleziona tutti i risultati dei tool node e gli assegna alle corrispettive variaibli di stato
+
+generator node:
+
+compilerNode: finalizer che utilizza i dati forniti nello state del grafo per produrre documenti formattati tramite Jinja2
 
 ## 📂 Struttura del progetto
 
@@ -25,7 +30,10 @@ project/
 |-- tools.py         # tool disponibili 
 |-- graph.py         # costruzione del grafo 
 |-- main.py          # entry-point: esegue il grafo e stampa risultati
-|-- images/         # immagini per il README 
+|-- README.md        
+|-- images/          # immagini per il README 
+|-- templates/       # directory template da geenrare
+|-- renderedDocs/    # directory documenti renderizzati e finali
 ```
 
 
@@ -77,7 +85,7 @@ Costruisce il **grafo LangGraph**:
 ### Installazione 
 1. Installa i requisiti (serve [LangGraph](https://python.langchain.com/docs/langgraph/)):
    ```bash
-   pip install langgraph langchain langchain-anthropic pydantic
+   pip install langgraph langchain langchain-anthropic pydantic jinja2
 
 ### Avvio
   
@@ -85,9 +93,6 @@ Costruisce il **grafo LangGraph**:
    python main.py
  
 ```
-Se non c’è un URL GitHub valido nello state, l’LLM chiamerà ask_user_input e la CLI te lo chiederà.
-
-
 
 
 
