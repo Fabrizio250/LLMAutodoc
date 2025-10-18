@@ -2,13 +2,14 @@ from typing import TypedDict, List, Dict, Any, Optional, Tuple,Literal, Annotate
 from langgraph.graph.message import add_messages
 
 # ----DATASET ----
-class DatasetMeta(TypedDict):
-    datasetDescription: Optional[str]
-    version_and_status: Tuple[Optional[str], Optional[str]]  # (version, status)
-    relevantLinks: List[str]
-    developers: List[str]
-    owners: List[str]
-    Instructions: List[str]
+class DatasetMeta(TypedDict, total=False):
+    datasetDescription: str | List[str]   # a
+    version: str                          # b (parte 1)
+    status: str                           # b (parte 2)
+    relevantLinks: List[str]              # c
+    developers: List[str]                 # d
+    owners: List[str]                     # e
+    instructions: str | List[str]         # f
     
 
 
@@ -27,6 +28,8 @@ class State(TypedDict, total=False):
     config: Config
     dataset: DatasetMeta
     messages: Annotated[list, add_messages] #traccia il dialogo con l'LLM
+    
+    
   
     
 
