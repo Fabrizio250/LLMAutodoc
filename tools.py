@@ -1,6 +1,6 @@
 import subprocess, tempfile, os
 import glob
-from langchain.tools import tool
+from langchain_core.tools import tool
 
 GITHUB_API = "https://api.github.com"  # costante fissa
 
@@ -25,74 +25,45 @@ def clone_repo(repo_url: str, branch: str = None) -> dict:
     except Exception as e:
         return {"repo_url": repo_url, "local_path": tmpdir, "error": str(e)}
     
-#funziona bene
-@tool("ask_user_input")
-def ask_user_input(prompt: str) -> str:
     
+
+@tool("ask_user_input")
+def ask_user_input(field: str, prompt: str) -> dict:
     """
-    Chiedi all'utente un'informazione mancante e restituisci SOLO la risposta testuale.
-    Args:
-        prompt: La domanda da porre all'utente.
-    Returns:
-        La risposta fornita dall'utente (stringa, già ripulita).
+    Chiede all'utente un'informazione mancante per uno specifico campo.
+    Ritorna SEMPRE un payload strutturato minimal:
+      {"field": "<campo>", "value": <string|list[str]>}
     """
-    try:
-        print(f"[TOOL] {prompt}", flush=True)
-        answer = input("> ")
-        return (answer or "").strip()
-    except KeyboardInterrupt:
-        return ""  # o: "ANNULLATO_DALL_UTENTE"
-    except EOFError:
-        return ""  # input chiuso
-    except Exception as e:
-        return f"ERRORE: {e}"
+    print(f"[ask_user_input] field={field} :: {prompt}", flush=True)
+    # In runtime interattivo: l’UI inserirà la risposta dell’utente dentro 'value'.
+    return {"field": field, "value": ""}
 
-
-
-
-@tool("list_repo_files")
-def list_repo_files(root: str, patterns: list[str] = None, limit: int = 200) -> dict:
+@tool("description")
+def description() -> dict:
     """
-    Lista i file di interesse nel repo clonato (per pattern).
-    Esempi di pattern:
-      ["**/README*", "**/*.md", "**/*.yml", "**/*.yaml", "**/*.json",
-       "**/pyproject.toml", "**/setup.cfg", "**/CITATION.cff", "**/LICENSE",
-       "**/data*/**/*"]
+    Esempio di tool che popola 'datasetDescription'.
+    (Qui fittizio; quando avrai l’estrattore reale, basta che rispetti {field, value})
     """
-    try:
-        if not os.path.isdir(root):
-            return {"files": [], "error": f"Root non valida: {root}"}
-        if patterns is None:
-            patterns = ["**/README*", "**/*.md", "**/*.yml", "**/*.yaml", "**/*.json",
-                        "**/pyproject.toml", "**/setup.cfg", "**/CITATION.cff",
-                        "**/LICENSE", "**/data*/**/*", "**/dataset*/**/*"]
-        found = []
-        for pat in patterns:
-            found.extend(glob.glob(os.path.join(root, pat), recursive=True))
-        # tieni solo file normali, dedup, ordina, e limita
-        files = sorted({f for f in found if os.path.isfile(f)})
-        return {"files": files[:limit], "error": None}
-    except Exception as e:
-        return {"files": [], "error": str(e)}
+    return {
+        "field": "datasetDescription",
+        "value": "Questa è una descrizione fittizia generata dal tool di test."
+    }
 
-@tool("read_text_file")
-def read_text_file(path: str, max_bytes: int = 400_000, encoding: str = "utf-8") -> dict:
+@tool("detectDatasetOwners")
+def detectDatasetOwners() -> dict:
     """
-    Legge un file di testo dal filesystem e restituisce il contenuto (troncato).
+    Esempio di tool che popola 'DatasetOwners'.
+    (Qui fittizio basta che rispetti {field, value})
     """
-    try:
-        if not os.path.isfile(path):
-            return {"path": path, "content": "", "error": "File non trovato"}
-        with open(path, "rb") as f:
-            data = f.read(max_bytes)
-        try:
-            text = data.decode(encoding, errors="replace")
-        except Exception:
-            text = data.decode("utf-8", errors="replace")
-        return {"path": path, "content": text, "error": None}
-    except Exception as e:
-        return {"path": path, "content": "", "error": str(e)}
+    return {
+        "field": "owners",
+        "value": "Luca Giorgione, Luca Paparella."
+    }
 
-
-
-
+@tool("detectDatasetStatus")
+def detectDatasetStatus() -> dict:
+    """
+    Esempio di tool che popola 'DatasetStatus'.
+    (Qui fittizio; basta che rispetti {field, value})
+    """
+    return {"field": "status", "value": "experimental"}
