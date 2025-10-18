@@ -1,0 +1,28 @@
+# Data Documentation
+
+**Descrizione:** {{ datasetDescription | default("TBD") }}
+**Versione:** {{ version | default("TBD") }}
+**Stato:** {{ status | default("TBD") }}
+**RelevantLinks:** {% if relevantLinks %}
+### Link
+{% for url in relevantLinks -%}
+- {{ url }}
+{% endfor %}
+{% endif %}
+
+**Developers:** {{developers}}
+
+**Owner:** {{owners}}
+
+### Istruzioni e UI
+{% if instructions %}
+{% if instructions is string -%}
+{{ instructions }}
+{% else -%}
+{% for line in instructions -%}
+- {{ line }}
+{% endfor %}
+{% endif -%}
+{% else %}
+None
+{% endif %}
