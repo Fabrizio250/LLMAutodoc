@@ -9,9 +9,11 @@ if __name__ == "__main__":
         "config": {
             "repo_source": "https://github.com/se4ai2122-cs-uniba/CT-COVID.git",
             "documents_to_generate": ["data"],
+            "templates_dir": "./templates",                   
+            "outputs_doc_dir": "./renderedDocs",  
             "llm_provider": "anthropic",
             "llm_model": "claude-3-haiku-20240307",
-            "llm_api_key":"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" # "llm_api_key": "<LA_TUA_CHIAVE>"
+            "llm_api_key":"" # "llm_api_key": "<LA_TUA_CHIAVE>"
         }
     }
 
@@ -30,5 +32,5 @@ if __name__ == "__main__":
     print(final_state.get("debug"))
 
 
-    print("Graph structure:")
-    print(compiled_graph.get_graph().draw_mermaid())
+    #print("Graph structure:")
+    #print(compiled_graph.get_graph().draw_mermaid())
