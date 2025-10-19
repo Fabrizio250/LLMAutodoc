@@ -53,7 +53,7 @@ Definisce lo **stato globale** del grafo:
 - `llm_orchestrator`: binda i tool ( clone_repo,detectDatasetOwners,detectDatasetStatus,...) e decide se invocare tool (emettendo *tool_calls*) o passare al generator.
 - `harvester_tool_results`(harvesterNode): consolida i risultati dei tool nello state
 - `generate_contents` (generatorNode): riformula/compone i campi del dataset usando **solo** i frammenti nello state
-- `compile_artifacts_node` (compilerNode): renderizza i template **Jinja2** per produrre i documenti finali in `renderedDocs/` (Pydantic v2) per compilare tutti i campi del dataset solo dalle informazioni emerse in chat/tool; mappa version/status in version_and_status.
+- `compile_artifacts_node` (compilerNode): enderizza i template **Jinja2** e scrive i documenti finali in `renderedDocs/`.
 
 ### `tools.py`
 Contiene **funzioni riutilizzabili** di supporto ai nodi, come:
