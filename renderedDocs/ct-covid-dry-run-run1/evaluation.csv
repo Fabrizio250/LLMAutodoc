@@ -1,0 +1,41 @@
+field,section,strategy,status,expected,outcome,grader_verdict,faithful,covered_by,n_sources,note
+datasetName,Overview,tool,filled,present,TP_ok,,,declarative,1,
+datasetDescription,Overview,retrieval,filled,present,TP_ok,CORRECT,True,declarative,5,
+statusDate,Overview,tool,filled,present,TP_ok,,,declarative,1,
+status,Overview,tool,filled,present,TP_ok,,,declarative,1,
+relevantLinks,Overview,tool,filled,present,TP_ok,,,declarative,3,
+developers,Overview,tool,filled,present,TP_ok,,,declarative,1,
+owners,Overview,tool,filled,present,TP_ok,,,declarative,2,
+deployerInstructions,Overview,retrieval,filled,absent,FP_hallucination,CORRECT,True,declarative,1,
+versionDetails,Overview,tool,filled,present,TP_ok,,,declarative,2,
+dataVersionControlTools,Data Versioning,tool,filled,present,TP_ok,,,declarative,4,
+schemaVersioning,Data Versioning,retrieval,abstained,partial,FN_missed,INCORRECT,,declarative,5,No sufficient evidence in the repository: lexical heuristic (dry-run)
+knownModels,Known Usages,tool,filled,present,TP_ok,,,declarative,2,
+knownApplications,Known Usages,retrieval,filled,present,TP_ok,CORRECT,True,declarative,1,
+dataTypes,Dataset Characteristics,tool,filled,present,TP_ok,,,declarative,1,
+size,Dataset Characteristics,tool,filled,present,TP_ok,,,declarative,6,
+primaryUseCases,Dataset Characteristics,retrieval,filled,present,TP_ok,CORRECT,True,declarative,2,
+sources,Data Origin and Source,retrieval,filled,present,TP_ok,CORRECT,True,declarative,2,
+collectionMethod,Provenance,retrieval,abstained,absent,TN_abstention,INCORRECT,,declarative,5,No sufficient evidence in the repository: lexical heuristic (dry-run)
+collectionDates,Provenance,retrieval,abstained,absent,TN_abstention,INCORRECT,,declarative,5,No sufficient evidence in the repository: lexical heuristic (dry-run)
+collectionCadence,Provenance,retrieval,abstained,absent,TN_abstention,INCORRECT,,declarative,5,No sufficient evidence in the repository: lexical heuristic (dry-run)
+preprocessingPipeline,Data Pre-Processing,tool,filled,present,TP_ok,,,declarative,2,
+dataCleaning,Data Pre-Processing,retrieval,abstained,absent,TN_abstention,INCORRECT,,declarative,5,No sufficient evidence in the repository: lexical heuristic (dry-run)
+dataTransformation,Data Pre-Processing,retrieval,filled,present,TP_content_ko,CORRECT,True,declarative,3,
+featureEngineering,Data Pre-Processing,retrieval,abstained,absent,TN_abstention,INCORRECT,,declarative,5,No sufficient evidence in the repository: lexical heuristic (dry-run)
+dataAugmentation,Data Pre-Processing,retrieval,filled,present,TP_ok,CORRECT,True,declarative,1,
+annotation,Data Annotation and Labeling,retrieval,filled,partial,TP_ok,CORRECT,True,declarative,3,
+validation,Validation Types,tool,filled,present,TP_ok,,,declarative,1,
+sampling,Sampling Methods,retrieval,filled,present,TP_ok,CORRECT,True,declarative,4,
+distribution,Dataset Distribution and Licensing,tool,filled,present,TP_ok,,,declarative,2,
+license,Dataset Distribution and Licensing,tool,filled,present,TP_ok,,,declarative,1,
+access,"Access, Retention, and Deletion",retrieval,abstained,absent,TN_abstention,INCORRECT,,declarative,5,No sufficient evidence in the repository: lexical heuristic (dry-run)
+retention,"Access, Retention, and Deletion",human,human_required,absent,TN_abstention,,,spec,0,Judgement/organisational information: must be provided by the manufacturer.
+riskAssessment,Data Risk Assessment,retrieval,abstained,partial,FN_missed,INCORRECT,,declarative,5,No sufficient evidence in the repository: lexical heuristic (dry-run)
+cybersecurity,Cybersecurity Measures,retrieval,abstained,absent,TN_abstention,INCORRECT,,declarative,1,No sufficient evidence in the repository: lexical heuristic (dry-run)
+docAuthors,Documentation Metadata,tool,filled,present,TP_ok,,,declarative,1,
+docVersion,Documentation Metadata,tool,filled,present,TP_ok,,,declarative,1,
+reviewers,Documentation Metadata,human,human_required,absent,TN_abstention,,,spec,0,Judgement/organisational information: must be provided by the manufacturer.
+standardsApplied,Standards Applied,human,human_required,absent,TN_abstention,,,spec,0,Judgement/organisational information: must be provided by the manufacturer.
+dataMonitoring,Data Monitoring,tool,filled,present,TP_ok,,,declarative,5,
+euDeclaration,EU Declaration of Conformity,human,human_required,absent,TN_abstention,,,spec,0,Judgement/organisational information: must be provided by the manufacturer.

@@ -1,0 +1,41 @@
+field,section,strategy,status,expected,outcome,grader_verdict,faithful,covered_by,n_sources,note
+datasetName,Overview,tool,filled,present,TP_ok,,,orchestrator,1,
+datasetDescription,Overview,retrieval,filled,present,TP_ok,CORRECT,True,orchestrator,3,
+statusDate,Overview,tool,filled,present,TP_ok,,,orchestrator,1,
+status,Overview,tool,filled,present,TP_ok,,,orchestrator,1,
+relevantLinks,Overview,tool,filled,present,TP_ok,,,orchestrator,3,
+developers,Overview,tool,filled,present,TP_ok,,,orchestrator,1,
+owners,Overview,tool,filled,present,TP_ok,,,orchestrator,2,
+deployerInstructions,Overview,retrieval,abstained,absent,TN_abstention,INCORRECT,,orchestrator,5,"No sufficient evidence in the repository: The chunks contain technical implementation details (installation requirements, model architecture, attention mechanisms) but do not provide instructions or r"
+versionDetails,Overview,tool,filled,present,TP_ok,,,orchestrator,2,
+dataVersionControlTools,Data Versioning,tool,filled,present,TP_ok,,,orchestrator,4,
+schemaVersioning,Data Versioning,retrieval,abstained,partial,FN_missed,INCORRECT,,orchestrator,5,"No sufficient evidence in the repository: None of the chunks contain information about how data metadata and schema are maintained and versioned; they only reference validation procedures, loss calcul"
+knownModels,Known Usages,tool,filled,present,TP_ok,,,orchestrator,2,
+knownApplications,Known Usages,retrieval,partial,present,TP_ok,AMBIGUOUS,True,orchestrator,4,
+dataTypes,Dataset Characteristics,tool,filled,present,TP_ok,,,orchestrator,1,
+size,Dataset Characteristics,tool,filled,present,TP_ok,,,orchestrator,6,
+primaryUseCases,Dataset Characteristics,retrieval,filled,present,TP_ok,CORRECT,True,orchestrator,1,
+sources,Data Origin and Source,retrieval,filled,present,TP_ok,CORRECT,True,orchestrator,1,
+collectionMethod,Provenance,retrieval,abstained,absent,TN_abstention,INCORRECT,,orchestrator,5,"No sufficient evidence in the repository: The chunks describe data processing pipelines, training procedures, and file paths, but contain no information about how the original data was collected (e.g."
+collectionDates,Provenance,retrieval,abstained,absent,TN_abstention,INCORRECT,,orchestrator,5,No sufficient evidence in the repository: None of the chunks contain information about collection dates or time periods (YYYY-MM – YYYY-MM format) for the dataset; they only describe technical methods
+collectionCadence,Provenance,retrieval,abstained,absent,TN_abstention,INCORRECT,,orchestrator,5,No sufficient evidence in the repository: None of the chunks contain information about collection cadence (Static/Streamed/Dynamic) for training data provenance as required by EU AI Act Article 10.
+preprocessingPipeline,Data Pre-Processing,tool,filled,present,TP_ok,,,orchestrator,2,
+dataCleaning,Data Pre-Processing,retrieval,partial,absent,FP_hallucination,AMBIGUOUS,True,orchestrator,2,
+dataTransformation,Data Pre-Processing,retrieval,filled,present,TP_content_ko,CORRECT,True,orchestrator,3,
+featureEngineering,Data Pre-Processing,retrieval,abstained,absent,TN_abstention,INCORRECT,,orchestrator,5,"No sufficient evidence in the repository: All chunks describe model-internal feature extraction and attention mechanisms (CNN layers, RNN hidden states, attention computations) rather than derived var"
+dataAugmentation,Data Pre-Processing,retrieval,filled,present,TP_ok,CORRECT,True,orchestrator,1,
+annotation,Data Annotation and Labeling,retrieval,partial,partial,TP_ok,AMBIGUOUS,True,orchestrator,3,
+validation,Validation Types,tool,filled,present,TP_ok,,,orchestrator,1,
+sampling,Sampling Methods,retrieval,filled,present,TP_ok,CORRECT,True,orchestrator,2,
+distribution,Dataset Distribution and Licensing,tool,filled,present,TP_ok,,,orchestrator,2,
+license,Dataset Distribution and Licensing,tool,filled,present,TP_ok,,,orchestrator,1,
+access,"Access, Retention, and Deletion",retrieval,abstained,absent,TN_abstention,INCORRECT,,orchestrator,5,"No sufficient evidence in the repository: All chunks contain technical information about machine learning models (LSTM, attention mechanisms, data augmentation, and training procedures) but none addre"
+retention,"Access, Retention, and Deletion",human,human_required,absent,TN_abstention,,,spec,0,Judgement/organisational information: must be provided by the manufacturer.
+riskAssessment,Data Risk Assessment,retrieval,abstained,partial,FN_missed,INCORRECT,,orchestrator,5,"No sufficient evidence in the repository: The chunks describe dataset composition, class distributions, training procedures, and model evaluation metrics, but contain no examination of possible biases"
+cybersecurity,Cybersecurity Measures,retrieval,abstained,absent,TN_abstention,INCORRECT,,orchestrator,1,"No sufficient evidence in the repository: The chunk contains only project metadata and description (project name, badges, and purpose) with no information about security measures or cybersecurity meas"
+docAuthors,Documentation Metadata,tool,filled,present,TP_ok,,,orchestrator,1,
+docVersion,Documentation Metadata,tool,filled,present,TP_ok,,,orchestrator,1,
+reviewers,Documentation Metadata,human,human_required,absent,TN_abstention,,,spec,0,Judgement/organisational information: must be provided by the manufacturer.
+standardsApplied,Standards Applied,human,human_required,absent,TN_abstention,,,spec,0,Judgement/organisational information: must be provided by the manufacturer.
+dataMonitoring,Data Monitoring,tool,filled,present,TP_ok,,,orchestrator,5,
+euDeclaration,EU Declaration of Conformity,human,human_required,absent,TN_abstention,,,spec,0,Judgement/organisational information: must be provided by the manufacturer.

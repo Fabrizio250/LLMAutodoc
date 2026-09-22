@@ -1,0 +1,41 @@
+field,section,strategy,status,expected,outcome,grader_verdict,faithful,covered_by,n_sources,note
+datasetName,Overview,tool,filled,present,TP_ok,,,orchestrator,1,
+datasetDescription,Overview,retrieval,filled,present,TP_ok,CORRECT,True,orchestrator,3,
+statusDate,Overview,tool,filled,present,TP_ok,,,orchestrator,1,
+status,Overview,tool,filled,present,TP_ok,,,orchestrator,1,
+relevantLinks,Overview,tool,filled,present,TP_ok,,,orchestrator,3,
+developers,Overview,tool,filled,present,TP_ok,,,orchestrator,1,
+owners,Overview,tool,filled,present,TP_ok,,,orchestrator,2,
+deployerInstructions,Overview,retrieval,abstained,absent,TN_abstention,INCORRECT,,orchestrator,5,"No sufficient evidence in the repository: None of the provided chunks contain deployer instructions or restrictions for using the data, focusing instead on installation requirements and technical repo"
+versionDetails,Overview,tool,filled,present,TP_ok,,,orchestrator,2,
+dataVersionControlTools,Data Versioning,tool,filled,present,TP_ok,,,orchestrator,4,
+schemaVersioning,Data Versioning,retrieval,abstained,partial,FN_missed,INCORRECT,,orchestrator,5,No sufficient evidence in the repository: None of the provided chunks contain information about data metadata maintenance or schema versioning.
+knownModels,Known Usages,tool,filled,present,TP_ok,,,orchestrator,2,
+knownApplications,Known Usages,retrieval,partial,present,TP_content_ko,AMBIGUOUS,True,orchestrator,1,
+dataTypes,Dataset Characteristics,tool,filled,present,TP_ok,,,orchestrator,1,
+size,Dataset Characteristics,tool,filled,present,TP_ok,,,orchestrator,6,
+primaryUseCases,Dataset Characteristics,retrieval,filled,present,TP_ok,CORRECT,True,orchestrator,1,
+sources,Data Origin and Source,retrieval,filled,present,TP_ok,CORRECT,True,orchestrator,1,
+collectionMethod,Provenance,retrieval,abstained,absent,TN_abstention,INCORRECT,,orchestrator,5,No sufficient evidence in the repository: The chunks do not contain information explaining the data collection method or provenance of the raw data.
+collectionDates,Provenance,retrieval,abstained,absent,TN_abstention,INCORRECT,,orchestrator,5,No sufficient evidence in the repository: None of the provided chunks contain the dates or collection period of the dataset.
+collectionCadence,Provenance,retrieval,abstained,absent,TN_abstention,INCORRECT,,orchestrator,5,"No sufficient evidence in the repository: None of the provided chunks contain information about the collection cadence (such as static, streamed, or dynamic) of the data provenance."
+preprocessingPipeline,Data Pre-Processing,tool,filled,present,TP_ok,,,orchestrator,2,
+dataCleaning,Data Pre-Processing,retrieval,partial,absent,FP_hallucination,AMBIGUOUS,True,orchestrator,1,
+dataTransformation,Data Pre-Processing,retrieval,filled,present,TP_content_ko,CORRECT,True,orchestrator,3,
+featureEngineering,Data Pre-Processing,retrieval,abstained,absent,TN_abstention,INCORRECT,,orchestrator,5,No sufficient evidence in the repository: The provided chunks discuss model-internal features extracted by neural network layers (CNNs and RNNs) rather than derived variables or extracted features of 
+dataAugmentation,Data Pre-Processing,retrieval,filled,present,TP_ok,CORRECT,True,orchestrator,1,
+annotation,Data Annotation and Labeling,retrieval,abstained,partial,FN_missed,INCORRECT,,orchestrator,5,"No sufficient evidence in the repository: The provided chunks mention what labels are used and that the health state is evaluated by an expert, but they do not explain how, by whom (specifically), or "
+validation,Validation Types,tool,filled,present,TP_ok,,,orchestrator,1,
+sampling,Sampling Methods,retrieval,partial,present,TP_ok,AMBIGUOUS,True,orchestrator,1,
+distribution,Dataset Distribution and Licensing,tool,filled,present,TP_ok,,,orchestrator,2,
+license,Dataset Distribution and Licensing,tool,filled,present,TP_ok,,,orchestrator,1,
+access,"Access, Retention, and Deletion",retrieval,abstained,absent,TN_abstention,INCORRECT,,orchestrator,5,"No sufficient evidence in the repository: The provided chunks discuss neural network architectures (LSTM, attention mechanisms), data augmentation, and training parameters, but contain no information "
+retention,"Access, Retention, and Deletion",human,human_required,absent,TN_abstention,,,spec,0,Judgement/organisational information: must be provided by the manufacturer.
+riskAssessment,Data Risk Assessment,retrieval,partial,partial,TP_ok,AMBIGUOUS,True,orchestrator,1,
+cybersecurity,Cybersecurity Measures,retrieval,abstained,absent,TN_abstention,INCORRECT,,orchestrator,1,"No sufficient evidence in the repository: The provided chunk only contains the project title, badges, and a brief description of the CT-COVID repository, with no information on security or cybersecuri"
+docAuthors,Documentation Metadata,tool,filled,present,TP_ok,,,orchestrator,1,
+docVersion,Documentation Metadata,tool,filled,present,TP_ok,,,orchestrator,1,
+reviewers,Documentation Metadata,human,human_required,absent,TN_abstention,,,spec,0,Judgement/organisational information: must be provided by the manufacturer.
+standardsApplied,Standards Applied,human,human_required,absent,TN_abstention,,,spec,0,Judgement/organisational information: must be provided by the manufacturer.
+dataMonitoring,Data Monitoring,tool,filled,present,TP_ok,,,orchestrator,5,
+euDeclaration,EU Declaration of Conformity,human,human_required,absent,TN_abstention,,,spec,0,Judgement/organisational information: must be provided by the manufacturer.

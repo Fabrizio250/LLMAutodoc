@@ -1,0 +1,14 @@
+abstention_precision,abstention_precision_sd,abstention_recall,abstention_recall_sd,coverage,coverage_sd,fill_precision,fill_precision_sd,hallucination_rate,hallucination_rate_sd,k,n_abstained,n_filled,n_human_required,n_partial,orch_turns,repo,retrieval_abstention_precision,retrieval_abstention_precision_sd,retrieval_abstention_recall,retrieval_abstention_recall_sd,retrieval_coverage,retrieval_coverage_sd,retrieval_fill_precision,retrieval_fill_precision_sd,retrieval_hallucination_rate,retrieval_hallucination_rate_sd,run,seconds,variant
+0.846,,0.917,,0.929,,0.962,,0.083,,1,9,24,4,3,2,ct-covid,0.778,,0.875,,0.8,,0.875,,0.125,,ct-covid-full-run1,112,full
+0.846,,0.917,,0.929,,0.962,,0.083,,2,9,24,4,3,2,ct-covid,0.778,,0.875,,0.8,,0.875,,0.125,,ct-covid-full-run2,106,full
+0.846,,0.917,,0.929,,0.962,,0.083,,1,9,24,4,3,2,ct-covid,0.778,,0.875,,0.8,,0.875,,0.125,,ct-covid-no-verify-run1,90,no-verify
+0.846,,0.917,,0.929,,0.962,,0.083,,2,9,24,4,3,2,ct-covid,0.778,,0.875,,0.8,,0.875,,0.125,,ct-covid-no-verify-run2,93,no-verify
+0.846,,0.917,,0.929,,0.962,,0.083,,1,9,24,4,3,2,ct-covid,0.778,,0.875,,0.8,,0.875,,0.125,,ct-covid-infer-strategy-run1,116,infer-strategy
+0.846,,0.917,,0.929,,0.962,,0.083,,2,9,24,4,3,2,ct-covid,0.778,,0.875,,0.8,,0.875,,0.125,,ct-covid-infer-strategy-run2,116,infer-strategy
+0.833,,0.417,,0.964,,0.926,,0.583,,1,2,34,4,,2,ct-covid,0.5,,0.125,,0.9,,0.778,,0.875,,ct-covid-no-grade-run1,184,no-grade
+0.8,,0.333,,0.964,,0.926,,0.667,,2,1,35,4,,2,ct-covid,0.0,,0.0,,0.9,,0.778,,1.0,,ct-covid-no-grade-run2,181,no-grade
+0.846,,0.917,,0.929,,0.962,,0.083,,1,9,27,4,,0,ct-covid,0.778,,0.875,,0.8,,0.875,,0.125,,ct-covid-dry-run-run1,5,dry-run
+0.846,0.0,0.917,0.0,0.929,0.0,0.962,0.0,0.083,0.0,mean,,,,,,ct-covid,0.778,0.0,0.875,0.0,0.8,0.0,0.875,0.0,0.125,0.0,ct-covid-full-MEAN,,full
+0.846,0.0,0.917,0.0,0.929,0.0,0.962,0.0,0.083,0.0,mean,,,,,,ct-covid,0.778,0.0,0.875,0.0,0.8,0.0,0.875,0.0,0.125,0.0,ct-covid-no-verify-MEAN,,no-verify
+0.846,0.0,0.917,0.0,0.929,0.0,0.962,0.0,0.083,0.0,mean,,,,,,ct-covid,0.778,0.0,0.875,0.0,0.8,0.0,0.875,0.0,0.125,0.0,ct-covid-infer-strategy-MEAN,,infer-strategy
+0.817,0.016,0.375,0.042,0.964,0.0,0.926,0.0,0.625,0.042,mean,,,,,,ct-covid,0.25,0.25,0.062,0.062,0.9,0.0,0.778,0.0,0.938,0.062,ct-covid-no-grade-MEAN,,no-grade

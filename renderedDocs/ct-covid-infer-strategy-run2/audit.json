@@ -1,0 +1,2166 @@
+{
+  "routing": "agentic",
+  "config": {
+    "repo_source": "https://github.com/se4ai2122-cs-uniba/CT-COVID.git",
+    "documents_to_generate": [
+      "data"
+    ],
+    "templates_dir": "C:\\Users\\fabri\\Desktop\\LLMAutodoc\\llmautodoc\\templates",
+    "outputs_doc_dir": "C:\\Users\\fabri\\Desktop\\LLMAutodoc\\renderedDocs\\ct-covid-infer-strategy-run2",
+    "llm_provider": "anthropic",
+    "llm_model": "claude-sonnet-4-6",
+    "grader_model": "claude-haiku-4-5-20251001",
+    "verifier_model": "claude-haiku-4-5-20251001",
+    "llm_endpoints": {
+      "github": {
+        "base_url": "https://models.github.ai/inference",
+        "api_key_env": "GITHUB_TOKEN"
+      },
+      "gemini": {
+        "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+        "api_key_env": "GEMINI_API_KEY"
+      }
+    },
+    "routing": "agentic",
+    "top_k": 5,
+    "spec_hints": false,
+    "grade": true,
+    "verify": true,
+    "max_orch_turns": 8,
+    "dry_run": false,
+    "config_file": "C:\\Users\\fabri\\Desktop\\LLMAutodoc\\config.yaml"
+  },
+  "summary": {
+    "filled": 24,
+    "abstained": 9,
+    "partial": 3,
+    "human_required": 4
+  },
+  "covered_by": {
+    "orchestrator": 36,
+    "spec": 4
+  },
+  "orchestrator_turns": 2,
+  "strategy_assignment": {
+    "applicable": true,
+    "n_fields": 40,
+    "agreement": 37,
+    "rate": 0.925,
+    "per_field": {
+      "datasetName": {
+        "expected": "tool",
+        "chosen": "tool",
+        "agree": true
+      },
+      "datasetDescription": {
+        "expected": "retrieval",
+        "chosen": "retrieval",
+        "agree": true
+      },
+      "statusDate": {
+        "expected": "tool",
+        "chosen": "tool",
+        "agree": true
+      },
+      "status": {
+        "expected": "tool",
+        "chosen": "tool",
+        "agree": true
+      },
+      "relevantLinks": {
+        "expected": "tool",
+        "chosen": "tool",
+        "agree": true
+      },
+      "developers": {
+        "expected": "tool",
+        "chosen": "tool",
+        "agree": true
+      },
+      "owners": {
+        "expected": "tool",
+        "chosen": "tool",
+        "agree": true
+      },
+      "deployerInstructions": {
+        "expected": "retrieval",
+        "chosen": "retrieval",
+        "agree": true
+      },
+      "versionDetails": {
+        "expected": "tool",
+        "chosen": "tool",
+        "agree": true
+      },
+      "dataVersionControlTools": {
+        "expected": "tool",
+        "chosen": "tool",
+        "agree": true
+      },
+      "schemaVersioning": {
+        "expected": "retrieval",
+        "chosen": "retrieval",
+        "agree": true
+      },
+      "knownModels": {
+        "expected": "tool",
+        "chosen": "tool",
+        "agree": true
+      },
+      "knownApplications": {
+        "expected": "retrieval",
+        "chosen": "retrieval",
+        "agree": true
+      },
+      "dataTypes": {
+        "expected": "tool",
+        "chosen": "tool",
+        "agree": true
+      },
+      "size": {
+        "expected": "tool",
+        "chosen": "tool",
+        "agree": true
+      },
+      "primaryUseCases": {
+        "expected": "retrieval",
+        "chosen": "retrieval",
+        "agree": true
+      },
+      "sources": {
+        "expected": "retrieval",
+        "chosen": "retrieval",
+        "agree": true
+      },
+      "collectionMethod": {
+        "expected": "retrieval",
+        "chosen": "retrieval",
+        "agree": true
+      },
+      "collectionDates": {
+        "expected": "retrieval",
+        "chosen": "retrieval",
+        "agree": true
+      },
+      "collectionCadence": {
+        "expected": "retrieval",
+        "chosen": "retrieval",
+        "agree": true
+      },
+      "preprocessingPipeline": {
+        "expected": "tool",
+        "chosen": "tool",
+        "agree": true
+      },
+      "dataCleaning": {
+        "expected": "retrieval",
+        "chosen": "retrieval",
+        "agree": true
+      },
+      "dataTransformation": {
+        "expected": "retrieval",
+        "chosen": "retrieval",
+        "agree": true
+      },
+      "featureEngineering": {
+        "expected": "retrieval",
+        "chosen": "retrieval",
+        "agree": true
+      },
+      "dataAugmentation": {
+        "expected": "retrieval",
+        "chosen": "retrieval",
+        "agree": true
+      },
+      "annotation": {
+        "expected": "retrieval",
+        "chosen": "retrieval",
+        "agree": true
+      },
+      "validation": {
+        "expected": "tool",
+        "chosen": "tool",
+        "agree": true
+      },
+      "sampling": {
+        "expected": "retrieval",
+        "chosen": "retrieval",
+        "agree": true
+      },
+      "distribution": {
+        "expected": "tool",
+        "chosen": "tool",
+        "agree": true
+      },
+      "license": {
+        "expected": "tool",
+        "chosen": "tool",
+        "agree": true
+      },
+      "access": {
+        "expected": "retrieval",
+        "chosen": "retrieval",
+        "agree": true
+      },
+      "retention": {
+        "expected": "human",
+        "chosen": "retrieval",
+        "agree": false
+      },
+      "riskAssessment": {
+        "expected": "retrieval",
+        "chosen": "retrieval",
+        "agree": true
+      },
+      "cybersecurity": {
+        "expected": "retrieval",
+        "chosen": "retrieval",
+        "agree": true
+      },
+      "docAuthors": {
+        "expected": "tool",
+        "chosen": "tool",
+        "agree": true
+      },
+      "docVersion": {
+        "expected": "tool",
+        "chosen": "tool",
+        "agree": true
+      },
+      "reviewers": {
+        "expected": "human",
+        "chosen": "none",
+        "agree": true
+      },
+      "standardsApplied": {
+        "expected": "human",
+        "chosen": "retrieval",
+        "agree": false
+      },
+      "dataMonitoring": {
+        "expected": "tool",
+        "chosen": "tool",
+        "agree": true
+      },
+      "euDeclaration": {
+        "expected": "human",
+        "chosen": "retrieval",
+        "agree": false
+      }
+    }
+  },
+  "fields": {
+    "datasetName": {
+      "field": "datasetName",
+      "section": "Overview",
+      "label": "Dataset name",
+      "strategy": "tool",
+      "status": "filled",
+      "value": "CT-COVID",
+      "sources": [
+        {
+          "file": "README.md",
+          "detail": "first H1 title"
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": ""
+    },
+    "datasetDescription": {
+      "field": "datasetDescription",
+      "section": "Overview",
+      "label": "Dataset Description",
+      "strategy": "retrieval",
+      "status": "filled",
+      "value": "The COVIDx-CT dataset consists of CT images (individual slices) annotated with one of three labels: normal, non-COVID-19 pneumonia, and COVID-19 pneumonia [2]. It contains 143,778 training, 25,486 validation, and 25,658 test examples [2]. Bounding box coordinates for lung regions are also provided for each example [0]. The three classes are highly unbalanced [2]. The dataset is freely available on Kaggle [0].\n\nA derived dataset, COVIDx-SeqCT, is composed of sequences of exactly 16 CT slices extracted uniformly from CT scans; scans with fewer than 16 slices are discarded [0]. It contains 2,390 training, 430 validation, and 408 test examples, each carrying the same three-class annotation [0][1]. The task served by both datasets is classification of CT images or CT scan sequences into normal, pneumonia, or COVID-19 categories [2]. The motivation includes end-to-end CT scan classification and generation of attention-based explanations relevant to the medical domain [2]. The original source of COVIDx-SeqCT is the COVIDx-CT dataset [0].",
+      "sources": [
+        {
+          "id": 17,
+          "file": "docs/ct-report.pdf",
+          "line": 40,
+          "kind": "pdf",
+          "text": "Moreover, within the dataset, the bounding box\ncoordinates for of lungs region are also available for each\nexample. The class distributions are available in Table I. The dataset\nis freely available on Kaggle. TABLE I\nCOVID X-CT EXAMPLES DISTRIBUTION FOR EACH CLASS . COVIDx-CT Normal Pneumonia COVID-19 Total\nTrain 35,996 25,496 82,286 143,778\nValidation 11,842 7400 6244 25,486\nTest 12,245 7395 6018 25,658\nFurthermore, another dataset called COVIDx-SeqCT is ob-\ntained from the original dataset. The COVIDx-SeqCT dataset\nis composed of 2390 training examples, 430 validation ex-\namples and 408 test examples. Each example consists of a\nsequence of exactly 16 CT slices extracted uniformly from\nCT scans. CT scans in the original dataset having less than\n16 slices are discarded.",
+          "score": 19.345
+        },
+        {
+          "id": 18,
+          "file": "docs/ct-report.pdf",
+          "line": 56,
+          "kind": "pdf",
+          "text": "All the sequences of CT images are\nannotated with one between three labels: normal (normal CT\nimage), pneumonia (pneumonia not caused by COVID-19)\nand covid19 (pneumonia caused by COVID-19). The class\ndistributions of COVIDx-SeqCT are available in Table II. TABLE II\nCOVID X-S EQCT EXAMPLES DISTRIBUTION FOR EACH CLASS . COVIDx-SeqCT Normal Pneumonia COVID-19 Total\nTrain 486 403 1501 2390\nValidation 172 112 146 430\nTest 174 100 134 408\nFigure 1 shows four CT images for each class and Figure\n2 shows a CT sequence consisting of 16 CT images. Fig. 1. COVIDx-CT dataset samples. Normal CT images (on the left), non-\nCOVID-19 pneumonia CT images (at the center) and COVID-19 pneumonia\nCT images (on the right). 1",
+          "score": 16.55
+        },
+        {
+          "id": 16,
+          "file": "docs/ct-report.pdf",
+          "line": 25,
+          "kind": "pdf",
+          "text": "The second is to classify a CT scan,\nconsisting of several CT images, in an end-to-end fashion. Moreover, attention mechanisms are used to generate some\nexplanations regarding the predictions, a very important aspect\nin the underlying medical domain. II. D ATASET\nThe COVIDx-CT dataset is composed of 143,778 training\nexamples, 25,486 validation examples and 25,658 testing\nexamples. Each example is a CT image (i.e. a slice of a CT\nscan) and it is annotated with one between three labels: normal\n(normal CT image), pneumonia (pneumonia not caused by\nCOVID-19) and covid19 (pneumonia caused by COVID-19). However, all CT slices belonging to a single CT scan have the\nsame label. In other words, we also have annotated CT scans,\nconsisting of several CT slices. It’s important to notice that\nthe three classes ( normal, pneumonia and covid19) are highly\nunbalanced.",
+          "score": 12.569
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": "",
+      "grade": {
+        "verdict": "CORRECT",
+        "relevant": [
+          0,
+          1,
+          3
+        ],
+        "rationale": "Chunks 0, 1, and 3 provide a comprehensive overview of the COVIDx-CT dataset including what it contains (CT images with three classes: normal, pneumonia, COVID-19), its task (classification of CT scans), source (Kaggle), size, and class distribution, directly answering the field requirements.",
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      },
+      "verification": {
+        "faithful": true,
+        "unsupported": [],
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      }
+    },
+    "statusDate": {
+      "field": "statusDate",
+      "section": "Overview",
+      "label": "Status Date",
+      "strategy": "tool",
+      "status": "filled",
+      "value": "2022-01-12",
+      "sources": [
+        {
+          "file": ".git (git log)",
+          "detail": "last commit date"
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": ""
+    },
+    "status": {
+      "field": "status",
+      "section": "Overview",
+      "label": "Status",
+      "strategy": "tool",
+      "status": "filled",
+      "value": {
+        "status": "Limited Maintenance / Deprecated (no commits in >2 years)",
+        "last_commit": "2022-01-12",
+        "days_since_last_commit": 1702,
+        "commits": 156
+      },
+      "sources": [
+        {
+          "file": ".git (git log)",
+          "detail": "rule: >180 days -> Limited, >730 days -> Deprecated"
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": ""
+    },
+    "relevantLinks": {
+      "field": "relevantLinks",
+      "section": "Overview",
+      "label": "Relevant Links",
+      "strategy": "tool",
+      "status": "filled",
+      "value": [
+        {
+          "label": "GitHub Repository",
+          "url": "https://github.com/se4ai2122-cs-uniba/CT-COVID.git"
+        },
+        {
+          "label": "dockerhub",
+          "url": "https://hub.docker.com/r/peppocola/ct-covid"
+        },
+        {
+          "label": "Report / documentation (repo file)",
+          "url": "docs/ct-report.pdf"
+        }
+      ],
+      "sources": [
+        {
+          "file": ".git/config",
+          "detail": "remote.origin.url"
+        },
+        {
+          "file": "README.md",
+          "detail": "URLs in README"
+        },
+        {
+          "file": "docs/ct-report.pdf",
+          "detail": "PDF document in repository"
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": ""
+    },
+    "developers": {
+      "field": "developers",
+      "section": "Overview",
+      "label": "Developers",
+      "strategy": "tool",
+      "status": "filled",
+      "value": [
+        {
+          "name": "Lorenzo Loconte",
+          "email": "lorenzoloconte@outlook.it",
+          "commits": 74
+        },
+        {
+          "name": "Giuseppe Colavito",
+          "email": "giuseppecolavito999@gmail.com",
+          "commits": 46
+        },
+        {
+          "name": "itsfrank98",
+          "email": "frybene@libero.it",
+          "commits": 20
+        },
+        {
+          "name": "Francesco Benedetti",
+          "email": "45521145+itsfrank98@users.noreply.github.com",
+          "commits": 10
+        },
+        {
+          "name": "Daniela Grassi",
+          "email": "daniela.grassi.98@gmail.com",
+          "commits": 5
+        },
+        {
+          "name": "Daniela Grassi",
+          "email": "48294368+DanielaGrassi@users.noreply.github.com",
+          "commits": 1
+        }
+      ],
+      "sources": [
+        {
+          "file": ".git (git log)",
+          "detail": "6 distinct authors by e-mail"
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": ""
+    },
+    "owners": {
+      "field": "owners",
+      "section": "Overview",
+      "label": "Owner",
+      "strategy": "tool",
+      "status": "filled",
+      "value": {
+        "organization": "se4ai2122-cs-uniba",
+        "main_contributor": {
+          "name": "Lorenzo Loconte",
+          "email": "lorenzoloconte@outlook.it",
+          "commits": 74
+        }
+      },
+      "sources": [
+        {
+          "file": ".git/config",
+          "detail": "remote organisation"
+        },
+        {
+          "file": ".git (git log)",
+          "detail": "author with most commits"
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": ""
+    },
+    "deployerInstructions": {
+      "field": "deployerInstructions",
+      "section": "Overview",
+      "label": "Deployer instructions of use",
+      "strategy": "retrieval",
+      "status": "abstained",
+      "value": null,
+      "sources": [
+        {
+          "id": 7,
+          "file": "README.md",
+          "line": 40,
+          "kind": "markdown",
+          "text": "## Run locally\n### Requirements\nIf you just want to run the api:\n```bash\npip install -r requirements.txt\n```\n\nIf you want to use tools like `locust`, `pytest` and `great_expectations`:\n\n```bash\npip install -r requirements_dev.txt\n```",
+          "score": 17.525
+        },
+        {
+          "id": 42,
+          "file": "docs/ct-report.pdf",
+          "line": 528,
+          "kind": "pdf",
+          "text": "C ONCLUSIONS AND FUTURE WORKS\nWe proposed two different approaches, one based on single\nimage classiﬁcation and one on sequence classiﬁcation. Both\nof the approaches are performing quite well, but they are not\ndirectly comparable, since they use different datasets. Further-\nmore, the COVIDx-SeqCT is very small, so the sequence-\nbased model should be tested on a bigger dataset to assess\nbetter the performances. We think that the sequence-based\napproach is more correct then evaluating single images sepa-\nrately, that looks naive. Since a patient has more images for\na single CT-exam, a patient is being classiﬁed n times and\nit is difﬁcult to understand how to get a single classiﬁcation\nfor the patient from the n classiﬁcations of his CT images. Instead, evaluating a patient from the whole sequence seems\nmore natural and may give a better overview of the patient’s\nhealth state.",
+          "score": 15.783
+        },
+        {
+          "id": 19,
+          "file": "docs/ct-report.pdf",
+          "line": 70,
+          "kind": "pdf",
+          "text": "[page 2]\nFig. 2. A CT scan (from left to right and top to bottom) consisting of 16 CT\nimages taken from COVIDx-SeqCT. A. Preprocessing\nThe dataset is preprocessed with cropping and resizing. Only the part of the image inside the bounding box is kept. A resizing step is necessary to have all the images with the\nsame size and to ﬁt the input size requirements of the neural\nnetworks we will use for the task. So, all the images are resized\nto 224× 224 using bicubic interpolation. III. A TTENTION MECHANISMS\nIn this section we are going to introduce some basic\nattention techniques that will be used in the next sections of\nthis work, especially for the task of images and sequences\nclassiﬁcation. Most importantly, attention techniques were\nused to produce attention maps (showed in appendix) for both\nimages and sequences classiﬁcation.",
+          "score": 12.061
+        },
+        {
+          "id": 23,
+          "file": "docs/ct-report.pdf",
+          "line": 137,
+          "kind": "pdf",
+          "text": "Finally, a probability distribution over the classes c =\n{c1,...,c k} is obtained by a dense layer with softmax ac-\ntivation function. v = Wcˆg + bc (5)\np(ci) = expvi\n∑k\nj=1 expvj\n(6)\nThe parameters of the attention module can be trained\njointly with the rest of the model. B. Attention for Image Classiﬁcation\nFor images classiﬁcation, another global/soft attention\nmechanism was introduced by Jetley et al. [4], consisting\nof several attention modules that can be introduced in state-\nof-the-art convolutional neural networks such as VGG and\nRESNET. The main idea is to use attention maps to identify\nand exploit spatial information used by CNNs in making\ntheir classiﬁcation decisions, while suppressing irrelevant in-\nformation of other regions.",
+          "score": 12.02
+        },
+        {
+          "id": 26,
+          "file": "docs/ct-report.pdf",
+          "line": 180,
+          "kind": "pdf",
+          "text": "Similarly to the attention\ntechnique already introduced for sequence classiﬁcation, the\nnew global features ˆg is obtained as a linear combination of\nfeature vectors xi with attentions ai such that ∑n\ni=1ai = 1. ai = expsi∑n\nj=1 expsj\n(9)\nˆg =\nn∑\ni=1\naixi (10)\nThe compatibility score function C can be deﬁned in various\nways. The alignment model proposed by Bahdanau et al. [1]\ncan be used as a compatibility function as follows. C(ˆxi, g) =⟨u,ˆxi + g⟩ (11)\nThe weight vector u can be interpreted as learning the set of\nfeatures that are actually relevant. Alternatively, we can use\nthe dot product as a simpler measure of their compatibility as\nfollows. C(ˆxi, g) =⟨ˆxi, g⟩ (12)\nIn this case, the magnitude of the scores are directly pro-\nportional to the alignment between ˆxi and g.",
+          "score": 11.19
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": "No sufficient evidence in the repository: The chunks contain technical implementation details (installation requirements, model architecture, attention mechanisms) but do not provide instructions or restrictions for deployers using the data.",
+      "grade": {
+        "verdict": "INCORRECT",
+        "relevant": [],
+        "rationale": "The chunks contain technical implementation details (installation requirements, model architecture, attention mechanisms) but do not provide instructions or restrictions for deployers using the data.",
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      }
+    },
+    "versionDetails": {
+      "field": "versionDetails",
+      "section": "Overview",
+      "label": "Version Details",
+      "strategy": "tool",
+      "status": "filled",
+      "value": {
+        "head_commit": "3f05400",
+        "data_versions": {
+          "data/raw.dvc": "79cb3cab45b888c9b29e52f7a1bb1415"
+        }
+      },
+      "sources": [
+        {
+          "file": ".git",
+          "detail": "HEAD"
+        },
+        {
+          "file": "data/raw.dvc",
+          "detail": "DVC data hash"
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": ""
+    },
+    "dataVersionControlTools": {
+      "field": "dataVersionControlTools",
+      "section": "Data Versioning",
+      "label": "Data Version Control Tools",
+      "strategy": "tool",
+      "status": "filled",
+      "value": [
+        "DVC (Data Version Control)",
+        "DVC remote: gdrive://1n6fB1AHEiQ0x7m3Y0mlSmihLIYo583uf"
+      ],
+      "sources": [
+        {
+          "file": "dvc.yaml",
+          "detail": "DVC pipeline"
+        },
+        {
+          "file": "dvc.lock",
+          "detail": "DVC pipeline"
+        },
+        {
+          "file": "data/raw.dvc",
+          "detail": "DVC pointer"
+        },
+        {
+          "file": ".dvc/config",
+          "detail": "remote"
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": ""
+    },
+    "schemaVersioning": {
+      "field": "schemaVersioning",
+      "section": "Data Versioning",
+      "label": "Maintenance of Metadata and Schema Versioning",
+      "strategy": "retrieval",
+      "status": "abstained",
+      "value": null,
+      "sources": [
+        {
+          "id": 66,
+          "file": "src/covidx/utils/train.py",
+          "line": 122,
+          "kind": "comment",
+          "text": "Initialize the tqdm validation data loader, if verbose is specified",
+          "score": 8.437
+        },
+        {
+          "id": 62,
+          "file": "src/covidx/utils/torch.py",
+          "line": 43,
+          "kind": "docstring",
+          "text": "Call the object.\n\n        :param loss: The validation loss measured.",
+          "score": 6.143
+        },
+        {
+          "id": 14,
+          "file": "README.md",
+          "line": 96,
+          "kind": "markdown",
+          "text": "## Great Expectations\n```bash\ncd tests\nfor checkpoint in ct-train ct-valid ct-test\ndo\n  great_expectations --v3-api checkpoint run $checkpoint\ndone\n```",
+          "score": 6.077
+        },
+        {
+          "id": 67,
+          "file": "src/covidx/utils/train.py",
+          "line": 148,
+          "kind": "comment",
+          "text": "Get the average train and validation losses and accuracies and print it",
+          "score": 5.969
+        },
+        {
+          "id": 60,
+          "file": "src/covidx/utils/torch.py",
+          "line": 6,
+          "kind": "docstring",
+          "text": "Early stops the training if validation loss doesn't improve after a given number of consecutive epochs.",
+          "score": 5.7
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": "No sufficient evidence in the repository: None of the chunks contain information about how data metadata and schema are maintained and versioned; they only reference validation procedures, loss calculations, and Great Expectations checkpoints without addressing metadata or schema versioning practices.",
+      "grade": {
+        "verdict": "INCORRECT",
+        "relevant": [],
+        "rationale": "None of the chunks contain information about how data metadata and schema are maintained and versioned; they only reference validation procedures, loss calculations, and Great Expectations checkpoints without addressing metadata or schema versioning practices.",
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      }
+    },
+    "knownModels": {
+      "field": "knownModels",
+      "section": "Known Usages",
+      "label": "Model(s)",
+      "strategy": "tool",
+      "status": "filled",
+      "value": {
+        "model_artifacts": [
+          "models/ct_net.pt"
+        ],
+        "model_classes": [
+          "CTNet (src/covidx/ct/models.py)"
+        ]
+      },
+      "sources": [
+        {
+          "file": "dvc.yaml",
+          "detail": "stage outputs"
+        },
+        {
+          "file": "src/",
+          "detail": "model classes in code"
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": ""
+    },
+    "knownApplications": {
+      "field": "knownApplications",
+      "section": "Known Usages",
+      "label": "Application(s)",
+      "strategy": "retrieval",
+      "status": "partial",
+      "value": "A REST API accepting requests on port 5000 exposes a `/predict` endpoint that receives an image and its bounding box and returns a prediction [2][3]. The API is started via `python src/api.py` [1]. A frontend application consumes the API, started via `npm start` from the `src/frontend` directory [0]. Additional endpoints include `/models` for listing available models and `/docs` for API documentation [2].",
+      "sources": [
+        {
+          "id": 9,
+          "file": "README.md",
+          "line": 59,
+          "kind": "markdown",
+          "text": "## Frontend\n```bash\ncd src/frontend\nnpm install\nnpm start\n```",
+          "score": 15.244
+        },
+        {
+          "id": 8,
+          "file": "README.md",
+          "line": 53,
+          "kind": "markdown",
+          "text": "### Run api\n```bash\npython src/api.py\n```\nThose commands will run the api, which will accept requests on port 5000.",
+          "score": 12.209
+        },
+        {
+          "id": 3,
+          "file": "README.md",
+          "line": 5,
+          "kind": "markdown",
+          "text": "# Usage\n## API Endpoints\nThe API is accessible at the following endpoints:\n- `/` which gives a welcome message\n- `/docs` which provides a documentation of the API\n- `/models` which provides a list of available models\n- `/predict` used to receive prediction for a given image and his bounding box",
+          "score": 11.517
+        },
+        {
+          "id": 4,
+          "file": "README.md",
+          "line": 13,
+          "kind": "markdown",
+          "text": "## Request of prediction\nThe request is made by passing:\n- the image to be processed\n- the bounding box of the image\n\nAn example of request with `curl`:\n```bash\ncurl -X 'POST' \\\n  'http://localhost:5000/predict?xmin=0&ymin=0&xmax=224&ymax=224' \\\n  -H 'accept: application/json' \\\n  -H 'Content-Type: multipart/form-data' \\\n  -F 'file=filename.png;type=image/png'\n```",
+          "score": 10.135
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": "",
+      "grade": {
+        "verdict": "AMBIGUOUS",
+        "relevant": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "rationale": "The chunks describe an API with a frontend and prediction endpoint that consumes images and models, but do not explicitly state what applications or use cases actually consume this system.",
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      },
+      "verification": {
+        "faithful": true,
+        "unsupported": [],
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      }
+    },
+    "dataTypes": {
+      "field": "dataTypes",
+      "section": "Dataset Characteristics",
+      "label": "Data Types",
+      "strategy": "tool",
+      "status": "filled",
+      "value": {
+        "inferred_from_code": "images",
+        "dvc_tracked_data": [
+          "data/raw.dvc"
+        ]
+      },
+      "sources": [
+        {
+          "file": "src/api.py",
+          "detail": "image I/O libraries in code"
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": ""
+    },
+    "size": {
+      "field": "size",
+      "section": "Dataset Characteristics",
+      "label": "Size",
+      "strategy": "tool",
+      "status": "filled",
+      "value": {
+        "data/raw.dvc": {
+          "nfiles": 39079,
+          "bytes": 6259568533
+        },
+        "data/raw": {
+          "nfiles": 39079,
+          "bytes": 6259568533
+        },
+        "data/ct": {
+          "nfiles": 39079,
+          "bytes": 1209139393
+        },
+        "files_in_repo": {
+          "nfiles": 1,
+          "bytes": 11
+        }
+      },
+      "sources": [
+        {
+          "file": "data/raw.dvc",
+          "detail": "nfiles/size in DVC pointer"
+        },
+        {
+          "file": "dvc.lock",
+          "detail": "size/nfiles of data/raw"
+        },
+        {
+          "file": "dvc.lock",
+          "detail": "size/nfiles of data/ct"
+        },
+        {
+          "file": "dvc.lock",
+          "detail": "size/nfiles of data/ct"
+        },
+        {
+          "file": "dvc.lock",
+          "detail": "size/nfiles of data/ct"
+        },
+        {
+          "file": "data/",
+          "detail": "file count"
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": ""
+    },
+    "primaryUseCases": {
+      "field": "primaryUseCases",
+      "section": "Dataset Characteristics",
+      "label": "Primary Use Case(s)",
+      "strategy": "retrieval",
+      "status": "filled",
+      "value": "The dataset was built for multi-class classification of lung CT images into three categories: normal, pneumonia, and COVID-19 [0]. The primary use case is screening CT images to determine whether a patient has a COVID-19 infection or non-COVID-19 pneumonia [0]. The task is framed as a deep learning classification problem, with particular emphasis on minimizing false-negatives, given the health risks associated with undetected infections [0].",
+      "sources": [
+        {
+          "id": 15,
+          "file": "docs/ct-report.pdf",
+          "line": 1,
+          "kind": "pdf",
+          "text": "[page 1]\nScreening CT Images for COVID-19\nInfections and Pneumonia\nLorenzo Loconte\nUniversity of Bari Aldo Moro\nl.loconte5@studenti.uniba.it\n744328\nGiuseppe Colavito\nUniversity of Bari Aldo Moro\ng.colavito2@studenti.uniba.it\n736047\nI. I NTRODUCTION\nThe goal of this work is to understand if a patient has a\nCOVID-19 infection or a non-COVID-19 pneumonia, given\nsome CT (computed tomography) images of the lungs. The\ntask is a multi-class classiﬁcation task with three classes:\nnormal, pneumonia and COVID-19. In this kind of task, it\nis important to don’t have false-negatives, since an infected\npatient can have several health problems and can help the\ninfection spreading. In this work two approaches are used to solve the problem,\nboth in the area of deep learning. The ﬁrst is to classify\neach image separately, hence producing several predictions\nfor a single CT scan.",
+          "score": 16.356
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": "",
+      "grade": {
+        "verdict": "CORRECT",
+        "relevant": [
+          0
+        ],
+        "rationale": "Chunk 0 explicitly states the primary use case: classifying CT images to determine if a patient has COVID-19 infection, non-COVID-19 pneumonia, or normal lungs (multi-class classification with three classes).",
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      },
+      "verification": {
+        "faithful": true,
+        "unsupported": [],
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      }
+    },
+    "sources": {
+      "field": "sources",
+      "section": "Data Origin and Source",
+      "label": "Source(s)",
+      "strategy": "retrieval",
+      "status": "filled",
+      "value": "The dataset (COVIDx-CT) is a publicly available dataset hosted on Kaggle [0]. A derived dataset, COVIDx-SeqCT, is obtained from the original COVIDx-CT dataset by extracting sequences of CT slices [0]. No URL or direct link is documented in the repository. The specific data collection method, institutional origin, or partner information is not documented in the repository.",
+      "sources": [
+        {
+          "id": 17,
+          "file": "docs/ct-report.pdf",
+          "line": 40,
+          "kind": "pdf",
+          "text": "Moreover, within the dataset, the bounding box\ncoordinates for of lungs region are also available for each\nexample. The class distributions are available in Table I. The dataset\nis freely available on Kaggle. TABLE I\nCOVID X-CT EXAMPLES DISTRIBUTION FOR EACH CLASS . COVIDx-CT Normal Pneumonia COVID-19 Total\nTrain 35,996 25,496 82,286 143,778\nValidation 11,842 7400 6244 25,486\nTest 12,245 7395 6018 25,658\nFurthermore, another dataset called COVIDx-SeqCT is ob-\ntained from the original dataset. The COVIDx-SeqCT dataset\nis composed of 2390 training examples, 430 validation ex-\namples and 408 test examples. Each example consists of a\nsequence of exactly 16 CT slices extracted uniformly from\nCT scans. CT scans in the original dataset having less than\n16 slices are discarded.",
+          "score": 28.459
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": "",
+      "grade": {
+        "verdict": "CORRECT",
+        "relevant": [
+          0
+        ],
+        "rationale": "Chunk 0 explicitly states that the dataset is 'freely available on Kaggle' and identifies it as COVIDx-CT, providing the data origin as a public dataset with a specific source link.",
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      },
+      "verification": {
+        "faithful": true,
+        "unsupported": [],
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      }
+    },
+    "collectionMethod": {
+      "field": "collectionMethod",
+      "section": "Provenance",
+      "label": "Collection Method(s)",
+      "strategy": "retrieval",
+      "status": "abstained",
+      "value": null,
+      "sources": [
+        {
+          "id": 55,
+          "file": "src/covidx/ct/dataset.py",
+          "line": 78,
+          "kind": "comment",
+          "text": "Instantiate the datasets (notice data augmentation on train data)",
+          "score": 7.102
+        },
+        {
+          "id": 65,
+          "file": "src/covidx/utils/train.py",
+          "line": 86,
+          "kind": "comment",
+          "text": "Initialize the tqdm train data loader, if verbose is enabled",
+          "score": 6.083
+        },
+        {
+          "id": 66,
+          "file": "src/covidx/utils/train.py",
+          "line": 122,
+          "kind": "comment",
+          "text": "Initialize the tqdm validation data loader, if verbose is specified",
+          "score": 6.083
+        },
+        {
+          "id": 0,
+          "file": "dvc.yaml",
+          "line": 1,
+          "kind": "yaml",
+          "text": "stages:\n  data-ct:\n    cmd: python src/preprocessing.py --size 224 224 data/raw data/ct\n    deps:\n    - src/preprocessing.py\n    - data/raw\n    outs:\n    - data/ct\n  train:\n    cmd: python src/experiments.py\n    deps:\n    - data/ct\n    - src/experiments.py\n    params:\n    - training.batch_size\n    - training.data_path\n    - training.epochs\n    - training.lr\n    - training.optimizer\n    - training.patience\n    - training.seed\n    outs:\n    - models/ct_net.pt\n  evaluate:\n    cmd: python src/evaluate.py\n    deps:\n    - data/ct\n    - models/ct_net.pt\n    - src/evaluate.py\n    metrics:\n    - metrics/ct_net-clf-metrics.json:\n        cache: false\n    outs:\n    - metrics/attentions\n    params:\n    - evaluation.data_path\n    - evaluation.n_attention_maps\n",
+          "score": 5.992
+        },
+        {
+          "id": 1,
+          "file": "params.yaml",
+          "line": 1,
+          "kind": "yaml",
+          "text": "training:\n  lr: 1e-4\n  seed: 42\n  optimizer: 'adam'\n  batch_size: 32\n  epochs: 25\n  patience: 3\n  data_path: 'data/ct'\nevaluation:\n  n_attention_maps: 100\n  data_path: 'data/ct'\n",
+          "score": 5.983
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": "No sufficient evidence in the repository: The chunks describe data processing pipelines, training procedures, and file paths, but contain no information about how the original data was collected (e.g., source, acquisition method, sampling strategy).",
+      "grade": {
+        "verdict": "INCORRECT",
+        "relevant": [],
+        "rationale": "The chunks describe data processing pipelines, training procedures, and file paths, but contain no information about how the original data was collected (e.g., source, acquisition method, sampling strategy).",
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      }
+    },
+    "collectionDates": {
+      "field": "collectionDates",
+      "section": "Provenance",
+      "label": "Dates of Collection",
+      "strategy": "retrieval",
+      "status": "abstained",
+      "value": null,
+      "sources": [
+        {
+          "id": 24,
+          "file": "docs/ct-report.pdf",
+          "line": 155,
+          "kind": "pdf",
+          "text": "Basically, the attention module\nenforces a notion of compatibility between local features that\nare extracted at intermediate layers in a CNN and global\n2",
+          "score": 9.03
+        },
+        {
+          "id": 32,
+          "file": "docs/ct-report.pdf",
+          "line": 288,
+          "kind": "pdf",
+          "text": "Experimental Setting\nData augmentation has been used because, in general, hav-\ning augmented data can help to achieve a lower generalization\nerror and higher classiﬁcation accuracy, as shown in [7], [8]. The dataset is augmented using random horizontal and vertical\nﬂip, gaussian blur with kernel size 7 and standard deviation\nsampled uniformly from [0.05, 2.0]. Moreover, random afﬁne\ntransformations including random scaling (with scale sampled\nuniformly from [0.9, 1.1]), random rotation (with degrees sam-\npled uniformly from [−30, 30]) and random translation (with\ntranslation percentages sampled uniformly from [0.0, 0.1]) are\nintroduced as well. Moreover, random shear augmentation on\nthe x-axis with rotation sampled uniformly from [−20, 20] is\nused. The default layers of R ESNET50-A TT2 are initialized with\npretraining on ImageNet.",
+          "score": 7.889
+        },
+        {
+          "id": 35,
+          "file": "docs/ct-report.pdf",
+          "line": 379,
+          "kind": "pdf",
+          "text": "The idea behind this choice is that the CT-\nimages are a sequence and they need to be classiﬁed as a\nsingle example. In this way, a single patient will have a single\nlabel, instead of multiple predicted labels for each image of\nthe CT sequence. Using this approach means also to use a ﬁxed sequence\nlength, hence some of the sequences are discarded from\nthe dataset since they don’t have enough images. Another\nproblem arises when the sequences have more images then\nthe ﬁxed sequence size, so also in this case, some examples\nare discarded. This also makes the results of the two models\nharder to compare, since it’s like using two different datasets. So, the main idea consists of using a CNN, like a\nRESNET50, as an image embeddings extractor and succes-\nsively applying a RNN, like a LSTM, with a linear classiﬁer. The joint model is also called CNN-LSTM and was proposed\nby Nguyen et al.",
+          "score": 7.386
+        },
+        {
+          "id": 29,
+          "file": "docs/ct-report.pdf",
+          "line": 233,
+          "kind": "pdf",
+          "text": "ResNet50 wtih Attention\nRESNETS [5] is a class of CNNs that is a special case of\nresidual networks. A residual network is a network in which,\ninstead of approximating a mapping H(x), we let the network\napproximate a residual function F (x) := H(x)− x. This\nformulation is used to address the degradation problem. With\nthe network depth increasing, the accuracy gets saturated and\nthen degrades rapidly. A R ESNET architecture uses 3× 3\nconvolutional layers with batch normalization [6] and ends\nwith a global average pooling (GAP) layer and a fully-\nconnected layer with softmax activation function. Shortcut\nconnections are inserted. The identity shortcuts can be directly\nused when the input and output are of the same dimensions. When the dimension increase, an identity shortcut with 0-\npadding or a projection shortcut can be used.",
+          "score": 6.691
+        },
+        {
+          "id": 25,
+          "file": "docs/ct-report.pdf",
+          "line": 160,
+          "kind": "pdf",
+          "text": "[page 3]\nfeatures that are fed directly to a linear classiﬁer at the end of\na CNN. Formally, let X =\n[\nx1 ... xn\n]\nbe the set of feature\nvectors extracted at a certain convolutional layer. Each xi is\nthe vector of output activations at the spatial location i. The\nglobal feature vector g is the output of the network’s sequence\nof convolutional and non-linear layers, having only to pass\nthrough the fully connected block to produce the prediction. The method proceeds by projecting the set of feature vectors\nX into the vector space of g using a linear mapping. Then\nthe set of compatibility scores is computed. ˆX = WpX (7)\nsi =C(ˆxi, g) (8)\nHere, si are the compatibility scores between the projected\nfeatures vectors ˆxi and the global feature vector g. Then the\ncompatibility scores are normalized by a softmax operation,\nhence obtaining the attentions.",
+          "score": 6.629
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": "No sufficient evidence in the repository: None of the chunks contain information about collection dates or time periods (YYYY-MM – YYYY-MM format) for the dataset; they only describe technical methods, data augmentation, and model architectures.",
+      "grade": {
+        "verdict": "INCORRECT",
+        "relevant": [],
+        "rationale": "None of the chunks contain information about collection dates or time periods (YYYY-MM – YYYY-MM format) for the dataset; they only describe technical methods, data augmentation, and model architectures.",
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      }
+    },
+    "collectionCadence": {
+      "field": "collectionCadence",
+      "section": "Provenance",
+      "label": "Collection Cadence",
+      "strategy": "retrieval",
+      "status": "abstained",
+      "value": null,
+      "sources": [
+        {
+          "id": 39,
+          "file": "docs/ct-report.pdf",
+          "line": 443,
+          "kind": "pdf",
+          "text": "The LSTM cell\ninternal state is thus updated as follows, but with a conditional\nself-loop weight f (t)\ni :\ns(t)\ni =f (t)\ni s(t−1)\ni +g(t)\ni σ\n(\nbi +Ui,∗x(t) +Wi,∗h(t−1)\n)\n(14)\nwhere b, U, and W respectively denote the biases, input\nweights and recurrent weights into the LSTM cell. The external input gate unit g(t)\ni is computed similarly to\nthe forget gate but with its own parameters:\ng(t)\ni =σ\n(\nbg\ni +U g\ni,∗x(t) +W g\ni,∗h(t−1)\n)\n(15)\nThe outputhi(t) of the LSTM cell can also be shut off via the\noutput gate q(t)\ni , which also uses a sigmoid unit for gating:\nh(t)\ni = tanh\n(\ns(t)\ni\n)\nq(t)\ni (16)\nq(t)\ni =σ\n(\nbo\ni +U o\ni,∗x(t) +W o\ni,∗h(t−1)\n)\n(17)\nwhich has parameters bo,U o, and W o for its the biases, input\nweights and recurrent weights respectively. LSTM networks\nhave been shown to learn long-term dependencies more easily\nthan the simple recurrent architectures [11].",
+          "score": 4.612
+        },
+        {
+          "id": 0,
+          "file": "dvc.yaml",
+          "line": 1,
+          "kind": "yaml",
+          "text": "stages:\n  data-ct:\n    cmd: python src/preprocessing.py --size 224 224 data/raw data/ct\n    deps:\n    - src/preprocessing.py\n    - data/raw\n    outs:\n    - data/ct\n  train:\n    cmd: python src/experiments.py\n    deps:\n    - data/ct\n    - src/experiments.py\n    params:\n    - training.batch_size\n    - training.data_path\n    - training.epochs\n    - training.lr\n    - training.optimizer\n    - training.patience\n    - training.seed\n    outs:\n    - models/ct_net.pt\n  evaluate:\n    cmd: python src/evaluate.py\n    deps:\n    - data/ct\n    - models/ct_net.pt\n    - src/evaluate.py\n    metrics:\n    - metrics/ct_net-clf-metrics.json:\n        cache: false\n    outs:\n    - metrics/attentions\n    params:\n    - evaluation.data_path\n    - evaluation.n_attention_maps\n",
+          "score": 2.996
+        },
+        {
+          "id": 1,
+          "file": "params.yaml",
+          "line": 1,
+          "kind": "yaml",
+          "text": "training:\n  lr: 1e-4\n  seed: 42\n  optimizer: 'adam'\n  batch_size: 32\n  epochs: 25\n  patience: 3\n  data_path: 'data/ct'\nevaluation:\n  n_attention_maps: 100\n  data_path: 'data/ct'\n",
+          "score": 2.992
+        },
+        {
+          "id": 55,
+          "file": "src/covidx/ct/dataset.py",
+          "line": 78,
+          "kind": "comment",
+          "text": "Instantiate the datasets (notice data augmentation on train data)",
+          "score": 2.855
+        },
+        {
+          "id": 54,
+          "file": "src/preprocessing.py",
+          "line": 7,
+          "kind": "comment",
+          "text": "Usage example:\npython covidx/ct/preprocessing.py --size 224 224 data/raw data/ct\n",
+          "score": 2.774
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": "No sufficient evidence in the repository: None of the chunks contain information about collection cadence (Static/Streamed/Dynamic) for training data provenance as required by EU AI Act Article 10.",
+      "grade": {
+        "verdict": "INCORRECT",
+        "relevant": [],
+        "rationale": "None of the chunks contain information about collection cadence (Static/Streamed/Dynamic) for training data provenance as required by EU AI Act Article 10.",
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      }
+    },
+    "preprocessingPipeline": {
+      "field": "preprocessingPipeline",
+      "section": "Data Pre-Processing",
+      "label": "Pre-processing pipeline (observed)",
+      "strategy": "tool",
+      "status": "filled",
+      "value": {
+        "dvc_stages": [
+          {
+            "stage": "data-ct",
+            "cmd": "python src/preprocessing.py --size 224 224 data/raw data/ct"
+          },
+          {
+            "stage": "train",
+            "cmd": "python src/experiments.py"
+          },
+          {
+            "stage": "evaluate",
+            "cmd": "python src/evaluate.py"
+          }
+        ],
+        "preprocessing_scripts": [
+          "src/preprocessing.py"
+        ],
+        "operations_detected_in_code": [
+          "crop",
+          "resize",
+          "split"
+        ]
+      },
+      "sources": [
+        {
+          "file": "dvc.yaml",
+          "detail": "pipeline stages"
+        },
+        {
+          "file": "src/preprocessing.py",
+          "detail": "pre-processing script"
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": ""
+    },
+    "dataCleaning": {
+      "field": "dataCleaning",
+      "section": "Data Pre-Processing",
+      "label": "Data Cleaning",
+      "strategy": "retrieval",
+      "status": "partial",
+      "value": "Raw CT images are resized to 224×224 pixels via `src/preprocessing.py`, taking input from `data/raw` and outputting cleaned data to `data/ct` [0]. Data augmentation is applied to training data during dataset instantiation [1]. No further data cleaning operations (e.g., normalization parameters, noise removal, artifact handling, or missing data treatment) are documented in the repository.",
+      "sources": [
+        {
+          "id": 0,
+          "file": "dvc.yaml",
+          "line": 1,
+          "kind": "yaml",
+          "text": "stages:\n  data-ct:\n    cmd: python src/preprocessing.py --size 224 224 data/raw data/ct\n    deps:\n    - src/preprocessing.py\n    - data/raw\n    outs:\n    - data/ct\n  train:\n    cmd: python src/experiments.py\n    deps:\n    - data/ct\n    - src/experiments.py\n    params:\n    - training.batch_size\n    - training.data_path\n    - training.epochs\n    - training.lr\n    - training.optimizer\n    - training.patience\n    - training.seed\n    outs:\n    - models/ct_net.pt\n  evaluate:\n    cmd: python src/evaluate.py\n    deps:\n    - data/ct\n    - models/ct_net.pt\n    - src/evaluate.py\n    metrics:\n    - metrics/ct_net-clf-metrics.json:\n        cache: false\n    outs:\n    - metrics/attentions\n    params:\n    - evaluation.data_path\n    - evaluation.n_attention_maps\n",
+          "score": 2.996
+        },
+        {
+          "id": 55,
+          "file": "src/covidx/ct/dataset.py",
+          "line": 78,
+          "kind": "comment",
+          "text": "Instantiate the datasets (notice data augmentation on train data)",
+          "score": 2.855
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": "",
+      "grade": {
+        "verdict": "AMBIGUOUS",
+        "relevant": [
+          2,
+          4
+        ],
+        "rationale": "Chunk 2 references a preprocessing stage that performs data operations, and chunk 4 mentions data augmentation, but neither explicitly describes the actual data cleaning operations performed.",
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      },
+      "verification": {
+        "faithful": true,
+        "unsupported": [],
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      }
+    },
+    "dataTransformation": {
+      "field": "dataTransformation",
+      "section": "Data Pre-Processing",
+      "label": "Data Transformation",
+      "strategy": "retrieval",
+      "status": "filled",
+      "value": "Input images are preprocessed using crop followed by resize with bicubic interpolation [0]. Images are then converted to tensors, normalized, moved to the target device, and unsqueezed to add a batch dimension [1]. Data augmentation is applied using random horizontal and vertical flip, Gaussian blur with kernel size 7 and standard deviation sampled uniformly from [0.05, 2.0], random affine transformations including scaling (scale ∈ [0.9, 1.1]), rotation (degrees ∈ [−30, 30]), translation (translation percentages ∈ [0.0, 0.1]), and random shear augmentation on the x-axis with rotation sampled uniformly from [−20, 20] [2].",
+      "sources": [
+        {
+          "id": 52,
+          "file": "src/api.py",
+          "line": 201,
+          "kind": "comment",
+          "text": "Preprocess the image using Crop + Resize (with bicubic interpolation)",
+          "score": 19.021
+        },
+        {
+          "id": 51,
+          "file": "src/api.py",
+          "line": 168,
+          "kind": "comment",
+          "text": "Convert the input image to a tensor, normalize it,\nmove it to device and unsqueeze the batch dimension",
+          "score": 5.83
+        },
+        {
+          "id": 32,
+          "file": "docs/ct-report.pdf",
+          "line": 288,
+          "kind": "pdf",
+          "text": "Experimental Setting\nData augmentation has been used because, in general, hav-\ning augmented data can help to achieve a lower generalization\nerror and higher classiﬁcation accuracy, as shown in [7], [8]. The dataset is augmented using random horizontal and vertical\nﬂip, gaussian blur with kernel size 7 and standard deviation\nsampled uniformly from [0.05, 2.0]. Moreover, random afﬁne\ntransformations including random scaling (with scale sampled\nuniformly from [0.9, 1.1]), random rotation (with degrees sam-\npled uniformly from [−30, 30]) and random translation (with\ntranslation percentages sampled uniformly from [0.0, 0.1]) are\nintroduced as well. Moreover, random shear augmentation on\nthe x-axis with rotation sampled uniformly from [−20, 20] is\nused. The default layers of R ESNET50-A TT2 are initialized with\npretraining on ImageNet.",
+          "score": 4.531
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": "",
+      "grade": {
+        "verdict": "CORRECT",
+        "relevant": [
+          0,
+          1,
+          3
+        ],
+        "rationale": "Chunks 0, 1, and 3 explicitly describe data transformations applied: image cropping/resizing with bicubic interpolation, tensor conversion with normalization, and comprehensive data augmentation techniques (flips, gaussian blur, affine transformations, scaling, rotation, translation, shear).",
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      },
+      "verification": {
+        "faithful": true,
+        "unsupported": [],
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      }
+    },
+    "featureEngineering": {
+      "field": "featureEngineering",
+      "section": "Data Pre-Processing",
+      "label": "Feature Engineering",
+      "strategy": "retrieval",
+      "status": "abstained",
+      "value": null,
+      "sources": [
+        {
+          "id": 25,
+          "file": "docs/ct-report.pdf",
+          "line": 160,
+          "kind": "pdf",
+          "text": "[page 3]\nfeatures that are fed directly to a linear classiﬁer at the end of\na CNN. Formally, let X =\n[\nx1 ... xn\n]\nbe the set of feature\nvectors extracted at a certain convolutional layer. Each xi is\nthe vector of output activations at the spatial location i. The\nglobal feature vector g is the output of the network’s sequence\nof convolutional and non-linear layers, having only to pass\nthrough the fully connected block to produce the prediction. The method proceeds by projecting the set of feature vectors\nX into the vector space of g using a linear mapping. Then\nthe set of compatibility scores is computed. ˆX = WpX (7)\nsi =C(ˆxi, g) (8)\nHere, si are the compatibility scores between the projected\nfeatures vectors ˆxi and the global feature vector g. Then the\ncompatibility scores are normalized by a softmax operation,\nhence obtaining the attentions.",
+          "score": 12.755
+        },
+        {
+          "id": 58,
+          "file": "src/covidx/ct/models.py",
+          "line": 67,
+          "kind": "comment",
+          "text": "Forward through the average pooling to get global feature vectors",
+          "score": 11.236
+        },
+        {
+          "id": 57,
+          "file": "src/covidx/ct/models.py",
+          "line": 60,
+          "kind": "comment",
+          "text": "Forward through the innermost two ResNet50 layers to get local feature tensors",
+          "score": 11.023
+        },
+        {
+          "id": 22,
+          "file": "docs/ct-report.pdf",
+          "line": 115,
+          "kind": "pdf",
+          "text": "Moreover, given a bidirectional recurrent\nneural network (RNN) with a forward hidden state − →h i and a\nbackward hidden state← −h i at positioni, a simple concatenation\nof them represents a hidden state hi at position i. Let hn be the last hidden state given by the RNN. A linear\ntransformation with tanh activation function is used to obtain\nthe global feature vector g. g = tanh(Wghn + bg) (1)\nThe resulting feature vector ˆg, called context vector is\nobtained by the attention module. Formally, the attention\nmodule computes the following equations. si = gT Wshi (2)\nai = expsi∑n\nj=1 expsj\n(3)\nˆg =\nn∑\ni=1\naihi (4)\nThe quantities si and ai are called scores and attentions\nrespectively. So, the context vector is a linear combination\nof hidden states hi with attentions ai, such that ∑n\ni ai =\n1.",
+          "score": 7.726
+        },
+        {
+          "id": 26,
+          "file": "docs/ct-report.pdf",
+          "line": 180,
+          "kind": "pdf",
+          "text": "Similarly to the attention\ntechnique already introduced for sequence classiﬁcation, the\nnew global features ˆg is obtained as a linear combination of\nfeature vectors xi with attentions ai such that ∑n\ni=1ai = 1. ai = expsi∑n\nj=1 expsj\n(9)\nˆg =\nn∑\ni=1\naixi (10)\nThe compatibility score function C can be deﬁned in various\nways. The alignment model proposed by Bahdanau et al. [1]\ncan be used as a compatibility function as follows. C(ˆxi, g) =⟨u,ˆxi + g⟩ (11)\nThe weight vector u can be interpreted as learning the set of\nfeatures that are actually relevant. Alternatively, we can use\nthe dot product as a simpler measure of their compatibility as\nfollows. C(ˆxi, g) =⟨ˆxi, g⟩ (12)\nIn this case, the magnitude of the scores are directly pro-\nportional to the alignment between ˆxi and g.",
+          "score": 7.3
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": "No sufficient evidence in the repository: All chunks describe model-internal feature extraction and attention mechanisms (CNN layers, RNN hidden states, attention computations) rather than derived variables or extracted features OF THE INPUT DATA during pre-processing.",
+      "grade": {
+        "verdict": "INCORRECT",
+        "relevant": [],
+        "rationale": "All chunks describe model-internal feature extraction and attention mechanisms (CNN layers, RNN hidden states, attention computations) rather than derived variables or extracted features OF THE INPUT DATA during pre-processing.",
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      }
+    },
+    "dataAugmentation": {
+      "field": "dataAugmentation",
+      "section": "Data Pre-Processing",
+      "label": "Data Augmentation",
+      "strategy": "retrieval",
+      "status": "filled",
+      "value": "Random horizontal and vertical flip [0]; Gaussian blur with kernel size 7 and standard deviation sampled uniformly from [0.05, 2.0] [0]; random affine transformations including random scaling with scale sampled uniformly from [0.9, 1.1], random rotation with degrees sampled uniformly from [−30, 30], and random translation with translation percentages sampled uniformly from [0.0, 0.1] [0]; random shear augmentation on the x-axis with rotation sampled uniformly from [−20, 20] [0].",
+      "sources": [
+        {
+          "id": 32,
+          "file": "docs/ct-report.pdf",
+          "line": 288,
+          "kind": "pdf",
+          "text": "Experimental Setting\nData augmentation has been used because, in general, hav-\ning augmented data can help to achieve a lower generalization\nerror and higher classiﬁcation accuracy, as shown in [7], [8]. The dataset is augmented using random horizontal and vertical\nﬂip, gaussian blur with kernel size 7 and standard deviation\nsampled uniformly from [0.05, 2.0]. Moreover, random afﬁne\ntransformations including random scaling (with scale sampled\nuniformly from [0.9, 1.1]), random rotation (with degrees sam-\npled uniformly from [−30, 30]) and random translation (with\ntranslation percentages sampled uniformly from [0.0, 0.1]) are\nintroduced as well. Moreover, random shear augmentation on\nthe x-axis with rotation sampled uniformly from [−20, 20] is\nused. The default layers of R ESNET50-A TT2 are initialized with\npretraining on ImageNet.",
+          "score": 13.594
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": "",
+      "grade": {
+        "verdict": "CORRECT",
+        "relevant": [
+          0
+        ],
+        "rationale": "Chunk 0 explicitly describes multiple data augmentation techniques used in the project, including horizontal/vertical flips, gaussian blur, affine transformations (scaling, rotation, translation), and shear augmentation.",
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      },
+      "verification": {
+        "faithful": true,
+        "unsupported": [],
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      }
+    },
+    "annotation": {
+      "field": "annotation",
+      "section": "Data Annotation and Labeling",
+      "label": "Annotation process",
+      "strategy": "retrieval",
+      "status": "partial",
+      "value": "Each CT image (slice) is annotated with one of three labels: normal, pneumonia (non-COVID-19), or covid19 [0]. All CT slices belonging to a single CT scan share the same label, assigned by an expert evaluating the patient's health state considering all images in the sequence [2]. The annotation covers both individual slices and full CT sequences (COVIDx-SeqCT) [1]. The annotator role is described only as \"an expert\" [2]; specific annotator identities, number of annotators, inter-annotator agreement procedures, and formal annotation guidelines are not documented in the repository.",
+      "sources": [
+        {
+          "id": 16,
+          "file": "docs/ct-report.pdf",
+          "line": 25,
+          "kind": "pdf",
+          "text": "The second is to classify a CT scan,\nconsisting of several CT images, in an end-to-end fashion. Moreover, attention mechanisms are used to generate some\nexplanations regarding the predictions, a very important aspect\nin the underlying medical domain. II. D ATASET\nThe COVIDx-CT dataset is composed of 143,778 training\nexamples, 25,486 validation examples and 25,658 testing\nexamples. Each example is a CT image (i.e. a slice of a CT\nscan) and it is annotated with one between three labels: normal\n(normal CT image), pneumonia (pneumonia not caused by\nCOVID-19) and covid19 (pneumonia caused by COVID-19). However, all CT slices belonging to a single CT scan have the\nsame label. In other words, we also have annotated CT scans,\nconsisting of several CT slices. It’s important to notice that\nthe three classes ( normal, pneumonia and covid19) are highly\nunbalanced.",
+          "score": 8.994
+        },
+        {
+          "id": 18,
+          "file": "docs/ct-report.pdf",
+          "line": 56,
+          "kind": "pdf",
+          "text": "All the sequences of CT images are\nannotated with one between three labels: normal (normal CT\nimage), pneumonia (pneumonia not caused by COVID-19)\nand covid19 (pneumonia caused by COVID-19). The class\ndistributions of COVIDx-SeqCT are available in Table II. TABLE II\nCOVID X-S EQCT EXAMPLES DISTRIBUTION FOR EACH CLASS . COVIDx-SeqCT Normal Pneumonia COVID-19 Total\nTrain 486 403 1501 2390\nValidation 172 112 146 430\nTest 174 100 134 408\nFigure 1 shows four CT images for each class and Figure\n2 shows a CT sequence consisting of 16 CT images. Fig. 1. COVIDx-CT dataset samples. Normal CT images (on the left), non-\nCOVID-19 pneumonia CT images (at the center) and COVID-19 pneumonia\nCT images (on the right). 1",
+          "score": 6.12
+        },
+        {
+          "id": 28,
+          "file": "docs/ct-report.pdf",
+          "line": 218,
+          "kind": "pdf",
+          "text": "This means that, if a patient has\nmultiple images, it will have multiple classiﬁcations. This is\nthe simplest approach, but has some problems: what happens if\na patient with multiple images has one of his images classiﬁed\nas pneumonia and another one as covid19? Furthermore, every image of the sequence has the same\nlabel, since the patient’s health state is evaluated by an expert\nconsidering all of the images. However, a single image may\nbe not enough to classify the patient. So this approach may\nseem a bit naive. To avoid this problem, we have also tried a sequence based\nmethod, to have a single classiﬁcation for the whole sequence\nand so, a single classiﬁcation for the patient. We will talk about\nthis approach on the next section. We have also focused our\nwork on how to get attention maps and therefore explainable\nresults. A.",
+          "score": 5.505
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": "",
+      "grade": {
+        "verdict": "AMBIGUOUS",
+        "relevant": [
+          0,
+          1,
+          2
+        ],
+        "rationale": "The chunks describe what labels were assigned (normal, pneumonia, covid19) and that annotations were done by an expert considering all images, but do not explicitly detail the annotation process, guidelines, or specific methodology used.",
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      },
+      "verification": {
+        "faithful": true,
+        "unsupported": [],
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      }
+    },
+    "validation": {
+      "field": "validation",
+      "section": "Validation Types",
+      "label": "Validation method(s)",
+      "strategy": "tool",
+      "status": "filled",
+      "value": [
+        "Great Expectations (expectation suites / checkpoints)"
+      ],
+      "sources": [
+        {
+          "file": "tests/great_expectations/great_expectations.yml",
+          "detail": "Great Expectations configuration"
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": ""
+    },
+    "sampling": {
+      "field": "sampling",
+      "section": "Sampling Methods",
+      "label": "Sampling / split",
+      "strategy": "retrieval",
+      "status": "filled",
+      "value": "COVIDx-CT dataset is split into train (143,778 examples: 35,996 Normal, 25,496 Pneumonia, 82,286 COVID-19), validation (25,486 examples: 11,842 Normal, 7,400 Pneumonia, 6,244 COVID-19), and test (25,658 examples: 12,245 Normal, 7,395 Pneumonia, 6,018 COVID-19) [0]. Bounding box coordinates for lung regions are available per example [0]. COVIDx-SeqCT, derived from the original dataset, uses sequences of exactly 16 CT slices extracted uniformly per scan; scans with fewer than 16 slices are discarded [0]. Its split is: train (2,390: 486 Normal, 403 Pneumonia, 1,501 COVID-19), validation (430: 172 Normal, 112 Pneumonia, 146 COVID-19), test (408: 174 Normal, 100 Pneumonia, 134 COVID-19) [1]. All examples are labelled normal, pneumonia, or covid19 [1]. Sampling criteria beyond the 16-slice minimum threshold are not documented in the repository.",
+      "sources": [
+        {
+          "id": 17,
+          "file": "docs/ct-report.pdf",
+          "line": 40,
+          "kind": "pdf",
+          "text": "Moreover, within the dataset, the bounding box\ncoordinates for of lungs region are also available for each\nexample. The class distributions are available in Table I. The dataset\nis freely available on Kaggle. TABLE I\nCOVID X-CT EXAMPLES DISTRIBUTION FOR EACH CLASS . COVIDx-CT Normal Pneumonia COVID-19 Total\nTrain 35,996 25,496 82,286 143,778\nValidation 11,842 7400 6244 25,486\nTest 12,245 7395 6018 25,658\nFurthermore, another dataset called COVIDx-SeqCT is ob-\ntained from the original dataset. The COVIDx-SeqCT dataset\nis composed of 2390 training examples, 430 validation ex-\namples and 408 test examples. Each example consists of a\nsequence of exactly 16 CT slices extracted uniformly from\nCT scans. CT scans in the original dataset having less than\n16 slices are discarded.",
+          "score": 12.747
+        },
+        {
+          "id": 18,
+          "file": "docs/ct-report.pdf",
+          "line": 56,
+          "kind": "pdf",
+          "text": "All the sequences of CT images are\nannotated with one between three labels: normal (normal CT\nimage), pneumonia (pneumonia not caused by COVID-19)\nand covid19 (pneumonia caused by COVID-19). The class\ndistributions of COVIDx-SeqCT are available in Table II. TABLE II\nCOVID X-S EQCT EXAMPLES DISTRIBUTION FOR EACH CLASS . COVIDx-SeqCT Normal Pneumonia COVID-19 Total\nTrain 486 403 1501 2390\nValidation 172 112 146 430\nTest 174 100 134 408\nFigure 1 shows four CT images for each class and Figure\n2 shows a CT sequence consisting of 16 CT images. Fig. 1. COVIDx-CT dataset samples. Normal CT images (on the left), non-\nCOVID-19 pneumonia CT images (at the center) and COVID-19 pneumonia\nCT images (on the right). 1",
+          "score": 9.662
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": "",
+      "grade": {
+        "verdict": "CORRECT",
+        "relevant": [
+          2,
+          3
+        ],
+        "rationale": "Chunks 2 and 3 explicitly provide train/validation/test split information with exact class distributions for both COVIDx-CT and COVIDx-SeqCT datasets, directly answering the field requirements.",
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      },
+      "verification": {
+        "faithful": true,
+        "unsupported": [],
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      }
+    },
+    "distribution": {
+      "field": "distribution",
+      "section": "Dataset Distribution and Licensing",
+      "label": "Distribution",
+      "strategy": "tool",
+      "status": "filled",
+      "value": {
+        "dvc_remote": "gdrive://1n6fB1AHEiQ0x7m3Y0mlSmihLIYo583uf",
+        "mechanism": "data distributed through DVC pointers (not included in the git repository)"
+      },
+      "sources": [
+        {
+          "file": ".dvc/config",
+          "detail": "DVC remote"
+        },
+        {
+          "file": "*.dvc",
+          "detail": "pointer"
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": ""
+    },
+    "license": {
+      "field": "license",
+      "section": "Dataset Distribution and Licensing",
+      "label": "License",
+      "strategy": "tool",
+      "status": "filled",
+      "value": {
+        "license": "MIT",
+        "copyright": "2021 Software engineering for AI-enabled systems @UniBa",
+        "scope_note": "licence of the repository (code); the DATA licence may differ and is not observable unless declared"
+      },
+      "sources": [
+        {
+          "file": "LICENSE",
+          "detail": "licence file"
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": ""
+    },
+    "access": {
+      "field": "access",
+      "section": "Access, Retention, and Deletion",
+      "label": "Access",
+      "strategy": "retrieval",
+      "status": "abstained",
+      "value": null,
+      "sources": [
+        {
+          "id": 26,
+          "file": "docs/ct-report.pdf",
+          "line": 180,
+          "kind": "pdf",
+          "text": "Similarly to the attention\ntechnique already introduced for sequence classiﬁcation, the\nnew global features ˆg is obtained as a linear combination of\nfeature vectors xi with attentions ai such that ∑n\ni=1ai = 1. ai = expsi∑n\nj=1 expsj\n(9)\nˆg =\nn∑\ni=1\naixi (10)\nThe compatibility score function C can be deﬁned in various\nways. The alignment model proposed by Bahdanau et al. [1]\ncan be used as a compatibility function as follows. C(ˆxi, g) =⟨u,ˆxi + g⟩ (11)\nThe weight vector u can be interpreted as learning the set of\nfeatures that are actually relevant. Alternatively, we can use\nthe dot product as a simpler measure of their compatibility as\nfollows. C(ˆxi, g) =⟨ˆxi, g⟩ (12)\nIn this case, the magnitude of the scores are directly pro-\nportional to the alignment between ˆxi and g.",
+          "score": 5.134
+        },
+        {
+          "id": 37,
+          "file": "docs/ct-report.pdf",
+          "line": 404,
+          "kind": "pdf",
+          "text": "[page 5]\nA. LSTM with Soft Attention\nA long short-term memory network is a type of recurrent\nneural network (RNN). Unlike standard feedforward neural\nnetworks, LSTM has feedback connections. It can not only\nprocess single data points (such as images), but also entire\nsequences of data (such as speech or video). A common LSTM unit is composed of a cell, an input\ngate, an output gate and a forget gate. The cell remembers\nvalues over arbitrary time intervals and the three gates regulate\nthe ﬂow of information into and out of the cell. This is\nessentially what LSTM does: it saves information for later,\nthus preventing older signals from gradually vanishing during\nprocessing. LSTM recurrent networks have “LSTM cells” that have an\ninternal recurrence (a self-loop), in addition to the outer recur-\nrence of the RNN.",
+          "score": 4.942
+        },
+        {
+          "id": 20,
+          "file": "docs/ct-report.pdf",
+          "line": 84,
+          "kind": "pdf",
+          "text": "In deep learning, attention can be interpreted as a vector\nof importance weights. We estimate using the attention vector\nhow much a region of an image, or a part of a sequence, is\ncorrelated with ( attends to ) other elements. Those elements\ncan be other image regions, parts of an output sequence and\nalso a predicted class. Particularly, attention mechanisms have been effectively\nused in neural machine translation [1] and neural image\ncaption generation [2]. Furthermore, some attention techniques\npermits to introduce some kind of explainability in deep learn-\ning models, especially in deep convolutional neural networks\n(CNNs). Typically, there are two kinds of attentions: soft and hard. In soft attention techniques, alignment weights are learned\nover all patches in the input data. In hard attention techniques,\nalignments weights are learned singularly over only one patch\nat a time.",
+          "score": 4.812
+        },
+        {
+          "id": 32,
+          "file": "docs/ct-report.pdf",
+          "line": 288,
+          "kind": "pdf",
+          "text": "Experimental Setting\nData augmentation has been used because, in general, hav-\ning augmented data can help to achieve a lower generalization\nerror and higher classiﬁcation accuracy, as shown in [7], [8]. The dataset is augmented using random horizontal and vertical\nﬂip, gaussian blur with kernel size 7 and standard deviation\nsampled uniformly from [0.05, 2.0]. Moreover, random afﬁne\ntransformations including random scaling (with scale sampled\nuniformly from [0.9, 1.1]), random rotation (with degrees sam-\npled uniformly from [−30, 30]) and random translation (with\ntranslation percentages sampled uniformly from [0.0, 0.1]) are\nintroduced as well. Moreover, random shear augmentation on\nthe x-axis with rotation sampled uniformly from [−20, 20] is\nused. The default layers of R ESNET50-A TT2 are initialized with\npretraining on ImageNet.",
+          "score": 4.693
+        },
+        {
+          "id": 33,
+          "file": "docs/ct-report.pdf",
+          "line": 303,
+          "kind": "pdf",
+          "text": "The Adam optimizer [9] with learn-\ning rate of 5× 10−4 and other parameters to their default\nvalues are used. The batch size is set to 64. For each epoch,\n1000 optimization steps are made. Furthermore, in order to\nmitigate the problem of unbalanced training data, a weighted\nbinary cross-entropy is used as the loss function. The weights\nof the loss function are inversely proportional with respect to\nthe class frequencies in the training data. The training process\nis stopped either after 25 epochs or if no improvements on the\nvalidation loss happen after 5 consecutive epochs. C. Evaluation\nThe model has been evaluated on the test set with precision,\nrecall and F1 metrics on all the three classes. Table III shows\nthe performance metrics on the three classes separately and\nthe weighted average metrics. TABLE III\nPERFORMANCE METRICS FOR EACH CLASS USING RESNET50-A TT2.",
+          "score": 4.667
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": "No sufficient evidence in the repository: All chunks contain technical information about machine learning models (LSTM, attention mechanisms, data augmentation, and training procedures) but none address data access, retention, or deletion policies required by EU AI Act Article 10.",
+      "grade": {
+        "verdict": "INCORRECT",
+        "relevant": [],
+        "rationale": "All chunks contain technical information about machine learning models (LSTM, attention mechanisms, data augmentation, and training procedures) but none address data access, retention, or deletion policies required by EU AI Act Article 10.",
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      }
+    },
+    "retention": {
+      "field": "retention",
+      "section": "Access, Retention, and Deletion",
+      "label": "Retention & Deletion",
+      "strategy": "human",
+      "status": "human_required",
+      "value": null,
+      "sources": [],
+      "covered_by": "spec",
+      "note": "Judgement/organisational information: must be provided by the manufacturer."
+    },
+    "riskAssessment": {
+      "field": "riskAssessment",
+      "section": "Data Risk Assessment",
+      "label": "Bias / risk examination",
+      "strategy": "retrieval",
+      "status": "abstained",
+      "value": null,
+      "sources": [
+        {
+          "id": 18,
+          "file": "docs/ct-report.pdf",
+          "line": 56,
+          "kind": "pdf",
+          "text": "All the sequences of CT images are\nannotated with one between three labels: normal (normal CT\nimage), pneumonia (pneumonia not caused by COVID-19)\nand covid19 (pneumonia caused by COVID-19). The class\ndistributions of COVIDx-SeqCT are available in Table II. TABLE II\nCOVID X-S EQCT EXAMPLES DISTRIBUTION FOR EACH CLASS . COVIDx-SeqCT Normal Pneumonia COVID-19 Total\nTrain 486 403 1501 2390\nValidation 172 112 146 430\nTest 174 100 134 408\nFigure 1 shows four CT images for each class and Figure\n2 shows a CT sequence consisting of 16 CT images. Fig. 1. COVIDx-CT dataset samples. Normal CT images (on the left), non-\nCOVID-19 pneumonia CT images (at the center) and COVID-19 pneumonia\nCT images (on the right). 1",
+          "score": 5.111
+        },
+        {
+          "id": 17,
+          "file": "docs/ct-report.pdf",
+          "line": 40,
+          "kind": "pdf",
+          "text": "Moreover, within the dataset, the bounding box\ncoordinates for of lungs region are also available for each\nexample. The class distributions are available in Table I. The dataset\nis freely available on Kaggle. TABLE I\nCOVID X-CT EXAMPLES DISTRIBUTION FOR EACH CLASS . COVIDx-CT Normal Pneumonia COVID-19 Total\nTrain 35,996 25,496 82,286 143,778\nValidation 11,842 7400 6244 25,486\nTest 12,245 7395 6018 25,658\nFurthermore, another dataset called COVIDx-SeqCT is ob-\ntained from the original dataset. The COVIDx-SeqCT dataset\nis composed of 2390 training examples, 430 validation ex-\namples and 408 test examples. Each example consists of a\nsequence of exactly 16 CT slices extracted uniformly from\nCT scans. CT scans in the original dataset having less than\n16 slices are discarded.",
+          "score": 4.505
+        },
+        {
+          "id": 33,
+          "file": "docs/ct-report.pdf",
+          "line": 303,
+          "kind": "pdf",
+          "text": "The Adam optimizer [9] with learn-\ning rate of 5× 10−4 and other parameters to their default\nvalues are used. The batch size is set to 64. For each epoch,\n1000 optimization steps are made. Furthermore, in order to\nmitigate the problem of unbalanced training data, a weighted\nbinary cross-entropy is used as the loss function. The weights\nof the loss function are inversely proportional with respect to\nthe class frequencies in the training data. The training process\nis stopped either after 25 epochs or if no improvements on the\nvalidation loss happen after 5 consecutive epochs. C. Evaluation\nThe model has been evaluated on the test set with precision,\nrecall and F1 metrics on all the three classes. Table III shows\nthe performance metrics on the three classes separately and\nthe weighted average metrics. TABLE III\nPERFORMANCE METRICS FOR EACH CLASS USING RESNET50-A TT2.",
+          "score": 3.754
+        },
+        {
+          "id": 0,
+          "file": "dvc.yaml",
+          "line": 1,
+          "kind": "yaml",
+          "text": "stages:\n  data-ct:\n    cmd: python src/preprocessing.py --size 224 224 data/raw data/ct\n    deps:\n    - src/preprocessing.py\n    - data/raw\n    outs:\n    - data/ct\n  train:\n    cmd: python src/experiments.py\n    deps:\n    - data/ct\n    - src/experiments.py\n    params:\n    - training.batch_size\n    - training.data_path\n    - training.epochs\n    - training.lr\n    - training.optimizer\n    - training.patience\n    - training.seed\n    outs:\n    - models/ct_net.pt\n  evaluate:\n    cmd: python src/evaluate.py\n    deps:\n    - data/ct\n    - models/ct_net.pt\n    - src/evaluate.py\n    metrics:\n    - metrics/ct_net-clf-metrics.json:\n        cache: false\n    outs:\n    - metrics/attentions\n    params:\n    - evaluation.data_path\n    - evaluation.n_attention_maps\n",
+          "score": 2.996
+        },
+        {
+          "id": 1,
+          "file": "params.yaml",
+          "line": 1,
+          "kind": "yaml",
+          "text": "training:\n  lr: 1e-4\n  seed: 42\n  optimizer: 'adam'\n  batch_size: 32\n  epochs: 25\n  patience: 3\n  data_path: 'data/ct'\nevaluation:\n  n_attention_maps: 100\n  data_path: 'data/ct'\n",
+          "score": 2.992
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": "No sufficient evidence in the repository: The chunks describe dataset composition, class distributions, training procedures, and model evaluation metrics, but contain no examination of possible biases, risks related to PII, sensitive data, or any data risk assessment.",
+      "grade": {
+        "verdict": "INCORRECT",
+        "relevant": [],
+        "rationale": "The chunks describe dataset composition, class distributions, training procedures, and model evaluation metrics, but contain no examination of possible biases, risks related to PII, sensitive data, or any data risk assessment.",
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      }
+    },
+    "cybersecurity": {
+      "field": "cybersecurity",
+      "section": "Cybersecurity Measures",
+      "label": "Security measures",
+      "strategy": "retrieval",
+      "status": "abstained",
+      "value": null,
+      "sources": [
+        {
+          "id": 2,
+          "file": "README.md",
+          "line": 1,
+          "kind": "markdown",
+          "text": "# CT-COVID [![codecov](https://codecov.io/gh/se4ai2122-cs-uniba/CT-COVID/branch/main/graph/badge.svg?token=62DKBATM5P)](https://codecov.io/gh/se4ai2122-cs-uniba/CT-COVID) ![Pylint Report](https://github.com/se4ai2122-cs-uniba/CT-COVID/actions/workflows/linter.yml/badge.svg)\n\n*Screening CT 3d images for interpretable COVID19 detection.*",
+          "score": 4.472
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": "No sufficient evidence in the repository: The chunk contains only project metadata and description (project name, badges, and purpose) with no information about security measures or cybersecurity measures applied to data.",
+      "grade": {
+        "verdict": "INCORRECT",
+        "relevant": [],
+        "rationale": "The chunk contains only project metadata and description (project name, badges, and purpose) with no information about security measures or cybersecurity measures applied to data.",
+        "mode": "llm",
+        "parse_ok": true,
+        "raw": ""
+      }
+    },
+    "docAuthors": {
+      "field": "docAuthors",
+      "section": "Documentation Metadata",
+      "label": "Documentation authors",
+      "strategy": "tool",
+      "status": "filled",
+      "value": {
+        "generated_by": "LLMAutodoc (agentic documentation framework)",
+        "repository_contributors": [
+          "Lorenzo Loconte",
+          "Giuseppe Colavito",
+          "itsfrank98",
+          "Francesco Benedetti",
+          "Daniela Grassi"
+        ]
+      },
+      "sources": [
+        {
+          "file": ".git (git log)",
+          "detail": "contributors"
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": ""
+    },
+    "docVersion": {
+      "field": "docVersion",
+      "section": "Documentation Metadata",
+      "label": "Document version",
+      "strategy": "tool",
+      "status": "filled",
+      "value": {
+        "document_version": "auto-2026-09-10-3f05400",
+        "generated_on": "2026-09-10",
+        "repo_commit": "3f05400"
+      },
+      "sources": [
+        {
+          "file": ".git",
+          "detail": "HEAD"
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": ""
+    },
+    "reviewers": {
+      "field": "reviewers",
+      "section": "Documentation Metadata",
+      "label": "Reviewers",
+      "strategy": "human",
+      "status": "human_required",
+      "value": null,
+      "sources": [],
+      "covered_by": "spec",
+      "note": "Judgement/organisational information: must be provided by the manufacturer."
+    },
+    "standardsApplied": {
+      "field": "standardsApplied",
+      "section": "Standards Applied",
+      "label": "Standards",
+      "strategy": "human",
+      "status": "human_required",
+      "value": null,
+      "sources": [],
+      "covered_by": "spec",
+      "note": "Judgement/organisational information: must be provided by the manufacturer."
+    },
+    "dataMonitoring": {
+      "field": "dataMonitoring",
+      "section": "Data Monitoring",
+      "label": "Monitoring",
+      "strategy": "tool",
+      "status": "filled",
+      "value": [
+        "Prometheus",
+        "Prometheus alert rules",
+        "Grafana dashboard",
+        "Alertmanager",
+        "Prometheus metrics exposed by the service (src/monitoring.py)",
+        "NOTE: SERVICE monitoring is observable, not DATA quality/drift monitoring"
+      ],
+      "sources": [
+        {
+          "file": "prometheus.yml",
+          "detail": "monitoring configuration"
+        },
+        {
+          "file": "alert_rules.yml",
+          "detail": "monitoring configuration"
+        },
+        {
+          "file": "grafana.json",
+          "detail": "monitoring configuration"
+        },
+        {
+          "file": "alertmanager.yml",
+          "detail": "monitoring configuration"
+        },
+        {
+          "file": "src/monitoring.py",
+          "detail": "prometheus_client"
+        }
+      ],
+      "covered_by": "orchestrator",
+      "note": ""
+    },
+    "euDeclaration": {
+      "field": "euDeclaration",
+      "section": "EU Declaration of Conformity",
+      "label": "Declaration",
+      "strategy": "human",
+      "status": "human_required",
+      "value": null,
+      "sources": [],
+      "covered_by": "spec",
+      "note": "Judgement/organisational information: must be provided by the manufacturer."
+    }
+  },
+  "trace": [
+    {
+      "t": 1789042621.76,
+      "node": "setup",
+      "config": {
+        "repo_source": "https://github.com/se4ai2122-cs-uniba/CT-COVID.git",
+        "documents_to_generate": [
+          "data"
+        ],
+        "templates_dir": "C:\\Users\\fabri\\Desktop\\LLMAutodoc\\llmautodoc\\templates",
+        "outputs_doc_dir": "C:\\Users\\fabri\\Desktop\\LLMAutodoc\\renderedDocs\\ct-covid-infer-strategy-run2",
+        "llm_provider": "anthropic",
+        "llm_model": "claude-sonnet-4-6",
+        "grader_model": "claude-haiku-4-5-20251001",
+        "verifier_model": "claude-haiku-4-5-20251001",
+        "llm_endpoints": {
+          "github": {
+            "base_url": "https://models.github.ai/inference",
+            "api_key_env": "GITHUB_TOKEN"
+          },
+          "gemini": {
+            "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+            "api_key_env": "GEMINI_API_KEY"
+          }
+        },
+        "routing": "agentic",
+        "top_k": 5,
+        "spec_hints": false,
+        "grade": true,
+        "verify": true,
+        "max_orch_turns": 8,
+        "dry_run": false,
+        "config_file": "C:\\Users\\fabri\\Desktop\\LLMAutodoc\\config.yaml"
+      }
+    },
+    {
+      "t": 1789042625.0,
+      "node": "setup",
+      "cloned": "C:\\Users\\fabri\\AppData\\Local\\Temp\\repo_pmydpsxj"
+    },
+    {
+      "node": "llm_orchestrator",
+      "turn": 1,
+      "tool_calls": 39,
+      "tools": [
+        "extract_datasetName",
+        "extract_statusDate",
+        "extract_status",
+        "extract_relevantLinks",
+        "extract_developers",
+        "extract_owners",
+        "extract_versionDetails",
+        "extract_dataVersionControlTools",
+        "extract_knownModels",
+        "extract_dataTypes",
+        "extract_size",
+        "extract_preprocessingPipeline",
+        "extract_validation",
+        "extract_distribution",
+        "extract_license",
+        "extract_docAuthors",
+        "extract_docVersion",
+        "extract_dataMonitoring",
+        "retrieve_evidence",
+        "retrieve_evidence",
+        "retrieve_evidence",
+        "retrieve_evidence",
+        "retrieve_evidence",
+        "retrieve_evidence",
+        "retrieve_evidence",
+        "retrieve_evidence",
+        "retrieve_evidence",
+        "retrieve_evidence",
+        "retrieve_evidence",
+        "retrieve_evidence",
+        "retrieve_evidence",
+        "retrieve_evidence",
+        "retrieve_evidence",
+        "retrieve_evidence",
+        "retrieve_evidence",
+        "retrieve_evidence",
+        "retrieve_evidence",
+        "retrieve_evidence",
+        "retrieve_evidence"
+      ]
+    },
+    {
+      "node": "harvester",
+      "harvested": 36,
+      "pending": 0
+    },
+    {
+      "node": "llm_orchestrator",
+      "turn": 2,
+      "tool_calls": 0,
+      "tools": []
+    },
+    {
+      "node": "coverage_fallback",
+      "missed_by_orchestrator": []
+    },
+    {
+      "t": 1789042647.63,
+      "node": "grader",
+      "field": "datasetDescription",
+      "verdict": "CORRECT",
+      "relevant": [
+        0,
+        1,
+        3
+      ],
+      "mode": "llm"
+    },
+    {
+      "t": 1789042649.19,
+      "node": "grader",
+      "field": "deployerInstructions",
+      "verdict": "INCORRECT",
+      "relevant": [],
+      "mode": "llm"
+    },
+    {
+      "t": 1789042650.77,
+      "node": "grader",
+      "field": "schemaVersioning",
+      "verdict": "INCORRECT",
+      "relevant": [],
+      "mode": "llm"
+    },
+    {
+      "t": 1789042652.35,
+      "node": "grader",
+      "field": "knownApplications",
+      "verdict": "AMBIGUOUS",
+      "relevant": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "llm"
+    },
+    {
+      "t": 1789042653.99,
+      "node": "grader",
+      "field": "primaryUseCases",
+      "verdict": "CORRECT",
+      "relevant": [
+        0
+      ],
+      "mode": "llm"
+    },
+    {
+      "t": 1789042655.88,
+      "node": "grader",
+      "field": "sources",
+      "verdict": "CORRECT",
+      "relevant": [
+        0
+      ],
+      "mode": "llm"
+    },
+    {
+      "t": 1789042657.48,
+      "node": "grader",
+      "field": "collectionMethod",
+      "verdict": "INCORRECT",
+      "relevant": [],
+      "mode": "llm"
+    },
+    {
+      "t": 1789042659.1,
+      "node": "grader",
+      "field": "collectionDates",
+      "verdict": "INCORRECT",
+      "relevant": [],
+      "mode": "llm"
+    },
+    {
+      "t": 1789042660.52,
+      "node": "grader",
+      "field": "collectionCadence",
+      "verdict": "INCORRECT",
+      "relevant": [],
+      "mode": "llm"
+    },
+    {
+      "t": 1789042662.08,
+      "node": "grader",
+      "field": "dataCleaning",
+      "verdict": "AMBIGUOUS",
+      "relevant": [
+        2,
+        4
+      ],
+      "mode": "llm"
+    },
+    {
+      "t": 1789042663.55,
+      "node": "grader",
+      "field": "dataTransformation",
+      "verdict": "CORRECT",
+      "relevant": [
+        0,
+        1,
+        3
+      ],
+      "mode": "llm"
+    },
+    {
+      "t": 1789042665.08,
+      "node": "grader",
+      "field": "featureEngineering",
+      "verdict": "INCORRECT",
+      "relevant": [],
+      "mode": "llm"
+    },
+    {
+      "t": 1789042666.67,
+      "node": "grader",
+      "field": "dataAugmentation",
+      "verdict": "CORRECT",
+      "relevant": [
+        0
+      ],
+      "mode": "llm"
+    },
+    {
+      "t": 1789042668.36,
+      "node": "grader",
+      "field": "annotation",
+      "verdict": "AMBIGUOUS",
+      "relevant": [
+        0,
+        1,
+        2
+      ],
+      "mode": "llm"
+    },
+    {
+      "t": 1789042669.88,
+      "node": "grader",
+      "field": "sampling",
+      "verdict": "CORRECT",
+      "relevant": [
+        2,
+        3
+      ],
+      "mode": "llm"
+    },
+    {
+      "t": 1789042671.62,
+      "node": "grader",
+      "field": "access",
+      "verdict": "INCORRECT",
+      "relevant": [],
+      "mode": "llm"
+    },
+    {
+      "t": 1789042673.25,
+      "node": "grader",
+      "field": "riskAssessment",
+      "verdict": "INCORRECT",
+      "relevant": [],
+      "mode": "llm"
+    },
+    {
+      "t": 1789042674.6,
+      "node": "grader",
+      "field": "cybersecurity",
+      "verdict": "INCORRECT",
+      "relevant": [],
+      "mode": "llm"
+    },
+    {
+      "t": 1789042680.96,
+      "node": "generator",
+      "field": "datasetDescription",
+      "status": "filled",
+      "n_chunks": 3
+    },
+    {
+      "t": 1789042684.82,
+      "node": "generator",
+      "field": "knownApplications",
+      "status": "partial",
+      "n_chunks": 4
+    },
+    {
+      "t": 1789042690.8,
+      "node": "generator",
+      "field": "primaryUseCases",
+      "status": "filled",
+      "n_chunks": 1
+    },
+    {
+      "t": 1789042694.58,
+      "node": "generator",
+      "field": "sources",
+      "status": "filled",
+      "n_chunks": 1
+    },
+    {
+      "t": 1789042700.86,
+      "node": "generator",
+      "field": "dataCleaning",
+      "status": "partial",
+      "n_chunks": 2
+    },
+    {
+      "t": 1789042704.71,
+      "node": "generator",
+      "field": "dataTransformation",
+      "status": "filled",
+      "n_chunks": 3
+    },
+    {
+      "t": 1789042707.78,
+      "node": "generator",
+      "field": "dataAugmentation",
+      "status": "filled",
+      "n_chunks": 1
+    },
+    {
+      "t": 1789042715.13,
+      "node": "generator",
+      "field": "annotation",
+      "status": "partial",
+      "n_chunks": 3
+    },
+    {
+      "t": 1789042720.99,
+      "node": "generator",
+      "field": "sampling",
+      "status": "filled",
+      "n_chunks": 2
+    },
+    {
+      "t": 1789042722.02,
+      "node": "verifier",
+      "field": "datasetDescription",
+      "faithful": true,
+      "status": "filled"
+    },
+    {
+      "t": 1789042723.13,
+      "node": "verifier",
+      "field": "knownApplications",
+      "faithful": true,
+      "status": "partial"
+    },
+    {
+      "t": 1789042726.01,
+      "node": "verifier",
+      "field": "primaryUseCases",
+      "faithful": true,
+      "status": "filled"
+    },
+    {
+      "t": 1789042728.72,
+      "node": "verifier",
+      "field": "sources",
+      "faithful": true,
+      "status": "filled"
+    },
+    {
+      "t": 1789042729.71,
+      "node": "verifier",
+      "field": "dataCleaning",
+      "faithful": true,
+      "status": "partial"
+    },
+    {
+      "t": 1789042730.63,
+      "node": "verifier",
+      "field": "dataTransformation",
+      "faithful": true,
+      "status": "filled"
+    },
+    {
+      "t": 1789042731.62,
+      "node": "verifier",
+      "field": "dataAugmentation",
+      "faithful": true,
+      "status": "filled"
+    },
+    {
+      "t": 1789042734.47,
+      "node": "verifier",
+      "field": "annotation",
+      "faithful": true,
+      "status": "partial"
+    },
+    {
+      "t": 1789042737.6,
+      "node": "verifier",
+      "field": "sampling",
+      "faithful": true,
+      "status": "filled"
+    }
+  ],
+  "corpus": {
+    "n_chunks": 69,
+    "files": [
+      "README.md",
+      "docs/ct-report.pdf",
+      "dvc.yaml",
+      "params.yaml",
+      "src/api.py",
+      "src/covidx/ct/dataset.py",
+      "src/covidx/ct/layers.py",
+      "src/covidx/ct/models.py",
+      "src/covidx/utils/torch.py",
+      "src/covidx/utils/train.py",
+      "src/monitoring.py",
+      "src/preprocessing.py",
+      "tests/test_ml.py"
+    ]
+  }
+}
