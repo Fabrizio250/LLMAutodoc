@@ -1,0 +1,50 @@
+{# data.j2 — Data Documentation (EU AI Act Art. 10 / Art. 11, Annex IV).
+   Every field shows: status, strategy, content, evidence. An ABSTAINED field is a correct result. #}
+{% macro render(fid) -%}
+{% set f = fields[fid] %}
+{% if f.status == "filled" %}{% set badge = "✅ filled" %}
+{% elif f.status == "partial" %}{% set badge = "🟡 partial evidence" %}
+{% elif f.status == "abstained" %}{% set badge = "⛔ ABSTAINED — no evidence in repository" %}
+{% elif f.status == "not_observable" %}{% set badge = "⚪ not observable in repository artefacts" %}
+{% elif f.status == "human_required" %}{% set badge = "✍️ REQUIRES HUMAN INPUT" %}
+{% else %}{% set badge = f.status %}{% endif %}
+### {{ f.label }}
+<sub>strategy: `{{ f.strategy }}` · status: **{{ badge }}**</sub>
+
+{% if f.value is not none %}
+{{ f.value | fmt }}
+{% else %}
+_{{ f.note or "Not provided." }}_
+{% endif %}
+{% if f.sources %}
+
+<details><summary>Evidence ({{ f.sources | length }})</summary>
+
+{% for s in f.sources %}
+- `{{ s.file }}{% if s.line %}:{{ s.line }}{% endif %}`{% if s.detail %} — {{ s.detail }}{% endif %}{% if s.kind %} ({{ s.kind }}{% if s.score %}, bm25={{ s.score }}{% endif %}){% endif %}
+{% endfor %}
+</details>
+{% endif %}
+
+{% endmacro -%}
+# Data Documentation — {{ fields.datasetName.value or repo }}
+
+> EU AI Act [Article 10](https://artificialintelligenceact.eu/article/10/) · [Article 11](https://artificialintelligenceact.eu/article/11/) · [Annex IV](https://artificialintelligenceact.eu/annex/4/) §1, §2(d)
+>
+> Generated on {{ generated_on }} from `{{ repo }}` by LLMAutodoc (routing: `{{ routing }}`).
+> Fields: {% for k, v in counts.items() %}{{ v }} {{ k }}{% if not loop.last %}, {% endif %}{% endfor %}.
+> Closed-scope corpus: {{ corpus.n_chunks }} chunks from {{ corpus.files | length }} files.
+>
+> **Reading guide.** Every field states *how* it was produced. `tool` = deterministic extraction from repository artefacts (no LLM involved in the value); `retrieval` = evidence retrieved from repository text, graded, and rewritten by an LLM using only that evidence; `human` = judgement that cannot be derived from artefacts. An **ABSTAINED** field means the repository contains no sufficient evidence — it must not be read as "not applicable".
+
+**Dataset Owner**: {{ fields.owners.value | fmt }}
+**Document Version**: {{ fields.docVersion.value.document_version if fields.docVersion.value else "n/a" }}
+**Reviewers**: _requires human input_
+
+{% for sec in sections %}
+## {{ sec }}
+
+{% for spec in specs if spec.section == sec %}
+{{ render(spec.id) }}
+{% endfor %}
+{% endfor %}

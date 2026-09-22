@@ -1,0 +1,55 @@
+# LLMAutodoc configuration. All run parameters live here.
+# The command line can override single values (--routing declarative) or point to another file (--config x.yaml).
+
+llm:
+  provider: anthropic
+  model: claude-sonnet-4-6            # LLM Orchestrator and Generator
+  grader_model: claude-haiku-4-5-20251001   # Grader: judges whether the evidence is sufficient
+  verifier_model:                     # Verifier: empty = same as grader_model.
+                                      # Set it to a model of ANOTHER family to make the check
+                                      # independent of the model that wrote the text.
+  # the API key does NOT go here: environment variable ANTHROPIC_API_KEY
+
+  # Models outside Anthropic are named "<endpoint>:<model id>", e.g. "github:openai/gpt-4.1-mini".
+  # Each endpoint declares WHICH environment variable holds its key, never the key itself.
+  endpoints:
+    github:
+      base_url: https://models.github.ai/inference
+      api_key_env: GITHUB_TOKEN
+    gemini:
+      base_url: https://generativelanguage.googleapis.com/v1beta/openai/
+      api_key_env: GEMINI_API_KEY
+
+pipeline:
+  routing: agentic                    # agentic | declarative (baseline without the LLM Orchestrator)
+  top_k: 5                            # chunks retrieved per field (BM25)
+  spec_hints: true                    # give the Orchestrator the field->instrument mapping
+  grade: true                         # CRAG Grader: judges the evidence and abstains
+  verify: true                        # faithfulness Verifier on generated text
+  max_orch_turns: 8                   # max Orchestrator turns before the coverage fallback
+  dry_run: false                      # true = no LLM calls (extractors + heuristics)
+  documents_to_generate: [data]       # data | model | application (only data implemented)
+
+paths:
+  templates_dir: templates            # relative to the llmautodoc/ package
+  outputs_dir: renderedDocs
+
+# Experiments (run_experiments.py): each entry produces renderedDocs/<name>-<routing>-run<n>/
+# and, when a ground truth exists, evaluation.json.
+experiments:
+  runs_per_config: 2          # LLM variants are repeated N times (dry-run is deterministic: 1 run)
+  variants:                   # name -> config overrides; the name goes into the output directory
+    full: {}                                  # complete pipeline (agentic routing, verifier on)
+    no-verify: {verify: false}                # ablation: how much the Verifier is worth
+    infer-strategy: {spec_hints: false}        # the Orchestrator must infer the instrument
+    no-grade: {grade: false}                  # ablation: plain RAG, no grading and no abstention
+    # retrieve-generate: {grade: false, verify: false}   # retrieve + generate only, no control at all
+    dry-run: {dry_run: true}                  # no LLM at all: extractors + lexical heuristic
+    # declarative: {routing: declarative}     # same tools, no LLM Orchestrator (routing comparison)
+  repos:
+    - name: ct-covid
+      url: https://github.com/se4ai2122-cs-uniba/CT-COVID.git
+      groundtruth: evaluation/groundtruth/ct-covid.json
+    # - name: <other-repo>
+    #   url: https://github.com/se4ai2122-cs-uniba/<other-repo>.git
+    #   groundtruth: evaluation/groundtruth/<other-repo>.json

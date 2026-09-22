@@ -46,8 +46,7 @@ def main():
     ap.add_argument("--out", default=None, help="output directory (default: paths.outputs_dir in config)")
     ap.add_argument("--routing", choices=["agentic", "declarative"], default=None)
     ap.add_argument("--model", default=None)
-    ap.add_argument("--grader", default=None, help="model for the Grader")
-    ap.add_argument("--verifier", default=None, help="model for the Verifier (may be another family)")
+    ap.add_argument("--grader", default=None)
     ap.add_argument("--top-k", type=int, default=None)
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--infer-strategy", action="store_true", help="ablation: hide the field->instrument mapping from the Orchestrator")
@@ -60,7 +59,7 @@ def main():
         print(clean_mermaid(build_graph().get_graph().draw_mermaid()))
         return
 
-    final = run(a.repo, a.out, a.config, routing=a.routing, llm_model=a.model, grader_model=a.grader, verifier_model=a.verifier, top_k=a.top_k,
+    final = run(a.repo, a.out, a.config, routing=a.routing, llm_model=a.model, grader_model=a.grader, top_k=a.top_k,
                 dry_run=True if a.dry_run else None, verify=False if a.no_verify else None,
                 grade=False if a.no_grade else None,
                 spec_hints=False if a.infer_strategy else None)
