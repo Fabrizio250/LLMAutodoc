@@ -1,0 +1,13 @@
+# Not needed in the image
+__pycache__/
+**/__pycache__/
+*.pyc
+.env
+renderedDocs/
+docs_build/
+docs/
+images/
+.git/
+.gitignore
+README.md
+annotazioni.txt
