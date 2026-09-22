@@ -1,0 +1,109 @@
+# Regulatory documentation as a by-product of the pipeline.
+#
+# WHERE THIS FILE GOES
+#   In the repository to be documented, at .github/workflows/regulatory-docs.yml
+#   (not in LLMAutodoc itself).
+#
+# WHAT IT NEEDS
+#   A repository secret ANTHROPIC_API_KEY (Settings > Secrets and variables > Actions).
+#   Set LLMAUTODOC_REPO below to your own LLMAutodoc repository.
+#
+# WHAT IT DOES
+#   On every pull request it regenerates the Data Documentation from the branch under review
+#   and commits the document and its audit trail back to the same branch, so that the
+#   documentation travels with the change that caused it.
+
+name: Regulatory documentation
+
+on:
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:          # manual run, useful for a first test
+
+permissions:
+  contents: write             # needed to commit the generated documents back
+
+concurrency:                  # one run per branch: a new push cancels the previous one
+  group: regdocs-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
+env:
+  LLMAUTODOC_REPO:  # <-- change to your repository
+  LLMAUTODOC_REF: main
+  OUT_DIR: regulatory-docs
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    # A pull request opened from a fork has no write access to this repository.
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
+
+    steps:
+      - name: Check out the branch under review
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+          fetch-depth: 0        # the extractors read the commit history
+
+      - name: Check out LLMAutodoc
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.LLMAUTODOC_REPO }}
+          ref: ${{ env.LLMAUTODOC_REF }}
+          path: .llmautodoc
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: .llmautodoc/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r .llmautodoc/requirements.txt
+
+      - name: Generate the documentation
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::error::ANTHROPIC_API_KEY is not set in the repository secrets."
+            exit 1
+          fi
+          python .llmautodoc/main.py "$GITHUB_WORKSPACE" --out "$GITHUB_WORKSPACE/$OUT_DIR"
+
+      - name: Report the outcome in the job summary
+        if: always()
+        run: |
+          if [ -f "$OUT_DIR/audit.json" ]; then
+            python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json, os
+          a = json.load(open(os.path.join(os.environ["OUT_DIR"], "audit.json")))
+          s, c = a.get("summary", {}), a.get("covered_by", {})
+          print("## Regulatory documentation\n")
+          print("| outcome | fields |\n|---|---|")
+          for k, v in sorted(s.items()):
+              print(f"| {k} | {v} |")
+          print(f"\nOrchestrator turns: {a.get('orchestrator_turns')}  ")
+          print(f"Covered by: {c}")
+          PY
+          fi
+
+      - name: Commit the documents to the branch
+        run: |
+          git config user.name  "llmautodoc[bot]"
+          git config user.email "llmautodoc@users.noreply.github.com"
+          git add "$OUT_DIR"
+          if git diff --cached --quiet; then
+            echo "No documentation change."
+          else
+            git commit -m "docs: regenerate regulatory documentation [skip ci]"
+            git push
+          fi
+
+      - name: Keep the run outputs as an artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: regulatory-docs
+          path: ${{ env.OUT_DIR }}
